@@ -23,6 +23,7 @@
 		99586C15246322E9008D93E3 /* NetworkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C14246322E9008D93E3 /* NetworkingAPI.swift */; };
 		99586C172463646C008D93E3 /* NetworkingAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C162463646C008D93E3 /* NetworkingAPITests.swift */; };
 		99586C1A2464A92E008D93E3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C192464A92E008D93E3 /* LoginViewModel.swift */; };
+		99586C1C2464B4E5008D93E3 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */; };
 		997C701D245FEE6C00750353 /* LiveVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997C701C245FEE6C00750353 /* LiveVideoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		99586C14246322E9008D93E3 /* NetworkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAPI.swift; sourceTree = "<group>"; };
 		99586C162463646C008D93E3 /* NetworkingAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAPITests.swift; sourceTree = "<group>"; };
 		99586C192464A92E008D93E3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		997C701C245FEE6C00750353 /* LiveVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVideoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 		9921DF8A245D4E720010F478 /* DogSitterAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */,
 				99586C162463646C008D93E3 /* NetworkingAPITests.swift */,
 				9921DF8B245D4E720010F478 /* DogSitterAppTests.swift */,
 				99586C0F24613B2B008D93E3 /* HttpServiceTests.swift */,
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99586C1C2464B4E5008D93E3 /* LoginViewModelTests.swift in Sources */,
 				99586C172463646C008D93E3 /* NetworkingAPITests.swift in Sources */,
 				9921DF97245D551D0010F478 /* TestDoubles.swift in Sources */,
 				99586C1024613B2B008D93E3 /* HttpServiceTests.swift in Sources */,

@@ -21,6 +21,14 @@ struct Streams: Decodable {
     var url: String?
 }
 
+struct LoginResponse: Decodable {
+    var data: AuthToken
+}
+
+struct AuthToken: Decodable {
+    var auth_token: String?
+}
+
 
 class NetworkingAPI {
     
@@ -30,6 +38,9 @@ class NetworkingAPI {
     let resultsIndex = 0
     let streamsIndex = 2
     
+    // Login constants
+    let loginUrl = URL(string: "https://playbowtech.com/api/login/")!
+    
     let httpService: HttpService
     
     init(httpService: HttpService) {
@@ -38,7 +49,7 @@ class NetworkingAPI {
     
     func getCameraUrl(completionHandler: @escaping (URL?) -> Void) {
         
-        httpService.getData(url: getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
+        self.httpService.getData(url: getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
             
             guard let data = data else {
                 completionHandler(nil)
@@ -52,6 +63,29 @@ class NetworkingAPI {
                     return
             }
             completionHandler(cameraUrl)
+        }
+    }
+    
+    func postLogin(email: String, password: String, completionHandler: @escaping (String?) -> Void) {
+        
+        let requestJsonBody = [
+            "email": email,
+            "password": password
+        ]
+        
+        self.httpService.postJsonData(url: loginUrl, requestJsonBody: requestJsonBody) { (data) in
+            
+            guard let data = data else {
+                completionHandler(nil)
+                return
+            }
+            let loginData = try? JSONDecoder().decode(LoginResponse.self, from: data)
+            
+            guard let auth_token = loginData?.data.auth_token else {
+                completionHandler(nil)
+                return
+            }
+            completionHandler(auth_token)
         }
     }
 }

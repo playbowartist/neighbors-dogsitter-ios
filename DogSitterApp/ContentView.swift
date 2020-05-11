@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var loginVM = LoginViewModel()
+    @State private var completeLogin: Bool = false
         
     var body: some View {
         
@@ -44,8 +45,12 @@ struct ContentView: View {
 //            print("url inside ContentView: ", url)
 //        }
         
+        
+        
         return NavigationView {
             VStack {
+                NavigationLink(destination: CameraControlView(), isActive: self.$completeLogin) { EmptyView() }
+                
                 TextField("Email", text: $loginVM.email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .disableAutocorrection(true)
@@ -56,11 +61,13 @@ struct ContentView: View {
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .padding()
-                NavigationLink(destination: CameraControlView()) {
-                    Text("Login")
-                }.padding()
-                Button("Print credentials") {
-                    self.loginVM.printCredentials()
+                Button("Login") {
+                    self.loginVM.login(networkingAPI: nil) {
+                        if self.loginVM.user.auth_token != nil {
+                            self.completeLogin = true
+                        }
+                    }
+                    
                 }.padding()
             }
         }
