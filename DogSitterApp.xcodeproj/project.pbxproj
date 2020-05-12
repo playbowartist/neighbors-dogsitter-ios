@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991AB5DD246A555E004FE7FA /* CameraControlViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5DC246A555E004FE7FA /* CameraControlViewModelTests.swift */; };
+		991AB5DF246A5A7C004FE7FA /* CameraControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */; };
+		991AB5E1246A5D5B004FE7FA /* CameraModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5E0246A5D5B004FE7FA /* CameraModelTests.swift */; };
+		991AB5E3246A5DC3004FE7FA /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5E2246A5DC3004FE7FA /* Camera.swift */; };
 		9921DF72245D4E290010F478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF71245D4E290010F478 /* AppDelegate.swift */; };
 		9921DF74245D4E290010F478 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF73245D4E290010F478 /* SceneDelegate.swift */; };
 		9921DF76245D4E290010F478 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF75245D4E290010F478 /* ContentView.swift */; };
@@ -45,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		991AB5DC246A555E004FE7FA /* CameraControlViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlViewModelTests.swift; sourceTree = "<group>"; };
+		991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlViewModel.swift; sourceTree = "<group>"; };
+		991AB5E0246A5D5B004FE7FA /* CameraModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTests.swift; sourceTree = "<group>"; };
+		991AB5E2246A5DC3004FE7FA /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		9921DF6E245D4E290010F478 /* DogSitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogSitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9921DF71245D4E290010F478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9921DF73245D4E290010F478 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +154,8 @@
 		9921DF8A245D4E720010F478 /* DogSitterAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				991AB5E0246A5D5B004FE7FA /* CameraModelTests.swift */,
+				991AB5DC246A555E004FE7FA /* CameraControlViewModelTests.swift */,
 				99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */,
 				99586C162463646C008D93E3 /* NetworkingAPITests.swift */,
 				9921DF8B245D4E720010F478 /* DogSitterAppTests.swift */,
@@ -160,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				9921DF94245D4F160010F478 /* User.swift */,
+				991AB5E2246A5DC3004FE7FA /* Camera.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +196,7 @@
 		99586C182464A908008D93E3 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */,
 				99586C192464A92E008D93E3 /* LoginViewModel.swift */,
 			);
 			path = "View Models";
@@ -321,11 +333,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991AB5E3246A5DC3004FE7FA /* Camera.swift in Sources */,
 				99586C15246322E9008D93E3 /* NetworkingAPI.swift in Sources */,
 				9921DF95245D4F160010F478 /* User.swift in Sources */,
 				99586C1324614808008D93E3 /* HttpService.swift in Sources */,
 				9921DF72245D4E290010F478 /* AppDelegate.swift in Sources */,
 				997C701D245FEE6C00750353 /* LiveVideoView.swift in Sources */,
+				991AB5DF246A5A7C004FE7FA /* CameraControlViewModel.swift in Sources */,
 				9921DF74245D4E290010F478 /* SceneDelegate.swift in Sources */,
 				9921DFA7245FC6900010F478 /* CameraControlView.swift in Sources */,
 				9921DF76245D4E290010F478 /* ContentView.swift in Sources */,
@@ -342,6 +356,8 @@
 				9921DF97245D551D0010F478 /* TestDoubles.swift in Sources */,
 				99586C1024613B2B008D93E3 /* HttpServiceTests.swift in Sources */,
 				9921DF8C245D4E720010F478 /* DogSitterAppTests.swift in Sources */,
+				991AB5DD246A555E004FE7FA /* CameraControlViewModelTests.swift in Sources */,
+				991AB5E1246A5D5B004FE7FA /* CameraModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
