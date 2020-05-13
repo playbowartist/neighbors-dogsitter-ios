@@ -11,6 +11,8 @@ import XCTest
 
 class CameraControlViewModelTests: XCTestCase {
 
+    let networkingHelper = NetworkingTestHelpers()
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -19,20 +21,17 @@ class CameraControlViewModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testStartReturnsCameraUrl() throws {
-        let sutCameraControlVM = CameraControlViewModel()
-//        sutCameraControlVM.camera.start()
+    func testStartSavesCameraUrl() throws {
+        let sutCameraControlVM = CameraControlViewModel(camera: Camera())
+        sutCameraControlVM.cameraUrl = nil
+        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.startResponseDict)
+        let expectation = XCTestExpectation(description: "Networking task complete")
         
+        sutCameraControlVM.startBroadcast(networkingAPI: networkingAPI) {
+            XCTAssertEqual(sutCameraControlVM.cameraUrl, self.networkingHelper.plantCamHlsUrl)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5)
     }
-
-    
-    
-    
-//    func testPerformanceExample() throws {
-//        // This is an example of a performance test case.
-//        self.measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
 
 }

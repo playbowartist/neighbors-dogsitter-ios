@@ -8,13 +8,25 @@
 
 import Foundation
 
+typealias Success = Bool
+
 class Camera {
 
     var broadcastUrl: URL?
     
-    func startBroadcast(networkingAPI: NetworkingAPI, completionHandler: @escaping (URL?) -> Void) {
+    func startBroadcast(networkingAPI: NetworkingAPIProtocol?, completionHandler: @escaping (URL?) -> Void) {
         
-        networkingAPI.getCameraUrl { (url) in
+        var startBroadcastAPI: NetworkingAPIProtocol {
+            if let networkingAPI = networkingAPI {
+                return networkingAPI
+            } else {
+                let session = URLSession(configuration: .default)
+                let httpService = HttpService(session: session)
+                return NetworkingAPI(httpService: httpService)
+            }
+        }
+        
+        startBroadcastAPI.getCameraUrl { (url) in
             guard let url = url else {
                 completionHandler(nil)
                 return
@@ -23,12 +35,29 @@ class Camera {
             self.broadcastUrl = url
             completionHandler(url)
         }
+    }
+    
+    func stopBroadcast(networkingAPI: NetworkingAPIProtocol?, completionHandler: @escaping (Success?) -> Void) {
         
-//        let session = URLSession(configuration: .default)
-//        let httpService = HttpService(session: session)
-//        let networkingAPI = NetworkingAPI(httpService: httpService)
-//
+        var stopBroadcastAPI: NetworkingAPIProtocol {
+            if let networkingAPI = networkingAPI {
+                return networkingAPI
+            } else {
+                let session = URLSession(configuration: .default)
+                let httpService = HttpService(session: session)
+                return NetworkingAPI(httpService: httpService)
+            }
+        }
         
+        stopBroadcastAPI.stopBroadcast { success in
+            guard let success = success else {
+                completionHandler(nil)
+                return
+            }
+            
+            self.broadcastUrl = nil
+            completionHandler(success)
+        }
     }
     
 }

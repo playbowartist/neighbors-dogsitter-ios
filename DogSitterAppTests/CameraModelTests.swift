@@ -11,27 +11,7 @@ import XCTest
 
 class CameraModelTests: XCTestCase {
     
-    let plantCamHlsUrl = URL(string: "https://m2-na3.angelcam.com/cameras/94396/streams/hls/playlist.m3u8?token=eyJjYW1lcmFfaWQiOiI5NDM5NiIsInRpbWUiOjE1ODg4MDQ2ODQ1Nzg5MTUsInRpbWVvdXQiOjM2MDB9%2Ea12b8a3068bfa7baff937c8753355674137b95203e4d8254a827580f90b0ab7d")!
-    let responseDict: [String: Any] = [
-        "results": [
-            [
-                "streams": [
-                    [
-                        "format": "mjpeg",
-                        "url": "https:xxx"
-                    ],
-                    [
-                        "format": "mp4",
-                        "url": "https:xxx"
-                    ],
-                    [
-                        "format": "hls",
-                        "url": "https://m2-na3.angelcam.com/cameras/94396/streams/hls/playlist.m3u8?token=eyJjYW1lcmFfaWQiOiI5NDM5NiIsInRpbWUiOjE1ODg4MDQ2ODQ1Nzg5MTUsInRpbWVvdXQiOjM2MDB9%2Ea12b8a3068bfa7baff937c8753355674137b95203e4d8254a827580f90b0ab7d"
-                    ]
-                ]
-            ]
-        ]
-    ]
+    let networkingHelper = NetworkingTestHelpers()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -44,44 +24,55 @@ class CameraModelTests: XCTestCase {
     func testStartReturnsBroadcastUrl() {
         var urlReturned: URL? = nil
         let sutCamera = Camera()
-        let session = URLSessionMock(statusCode: 200, responseDict: responseDict)
-        let httpService = HttpService(session: session)
-        let networkingAPI = NetworkingAPI(httpService: httpService)
+        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.startResponseDict)
         let expectation = XCTestExpectation(description: "Networking task complete")
         
         sutCamera.startBroadcast(networkingAPI: networkingAPI) { url in
             urlReturned = url
-            XCTAssertEqual(urlReturned, self.plantCamHlsUrl)
+            XCTAssertEqual(urlReturned, self.networkingHelper.plantCamHlsUrl)
             expectation.fulfill()
         }
         
-        XCTAssertNotNil(urlReturned)
         wait(for: [expectation], timeout: 5)
+        XCTAssertNotNil(urlReturned)
     }
     
     func testStartSavesBroadcastUrlAsProperty() {
         var urlReturned: URL? = nil
         let sutCamera = Camera()
-        let session = URLSessionMock(statusCode: 200, responseDict: responseDict)
-        let httpService = HttpService(session: session)
-        let networkingAPI = NetworkingAPI(httpService: httpService)
+        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.startResponseDict)
         let expectation = XCTestExpectation(description: "Networking task complete")
         
         sutCamera.startBroadcast(networkingAPI: networkingAPI) { url in
             urlReturned = url
-            XCTAssertEqual(sutCamera.broadcastUrl, self.plantCamHlsUrl)
+            XCTAssertEqual(sutCamera.broadcastUrl, self.networkingHelper.plantCamHlsUrl)
             expectation.fulfill()
         }
         
-        XCTAssertNotNil(urlReturned)
         wait(for: [expectation], timeout: 5)
-    }
+        XCTAssertNotNil(urlReturned)
 
-    func testStopReturnsNil() {
-        
     }
     
-    func testStopClearsBroadcastUrlProperty() {
-    
+    func testStopReturnsSuccessAndClearsBroadcastUrlProperty() {
+        let urlInitial: URL? = networkingHelper.plantCamHlsUrl
+        let sutCamera = Camera()
+        sutCamera.broadcastUrl = urlInitial
+        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.stopResponseDict)
+        let expectation = XCTestExpectation(description: "Networking task complete")
+
+        sutCamera.stopBroadcast(networkingAPI: networkingAPI) { success in
+            guard let success = success else {
+                XCTFail()
+                expectation.fulfill()
+                return
+            }
+            XCTAssertEqual(success, true)
+            XCTAssertEqual(sutCamera.broadcastUrl, nil)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 5)
+        XCTAssertNil(sutCamera.broadcastUrl)
     }
 }
