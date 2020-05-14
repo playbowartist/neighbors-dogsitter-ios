@@ -29,4 +29,18 @@ class CameraControlViewModel {
             completionHandler?()
         }
     }
+    
+    func stopBroadcast(networkingAPI: NetworkingAPIProtocol?, completionHandler: (() -> Void)?) {
+        
+        self.camera.stopBroadcast(networkingAPI: networkingAPI) { success in
+            guard let success = success else {
+                self.cameraUrl = nil
+                completionHandler?()
+                return
+            }
+            self.cameraUrl = nil
+            print("Camera stopped successfully: ", success)
+            completionHandler?()
+        }
+    }
 }

@@ -33,5 +33,18 @@ class CameraControlViewModelTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 5)
     }
+    
+    func testStopCameraClearsUrl() throws {
+        let sutCameraControlVM = CameraControlViewModel(camera: Camera())
+        sutCameraControlVM.cameraUrl = networkingHelper.plantCamHlsUrl
+        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.stopResponseDict)
+        let expectation = XCTestExpectation(description: "Networking task complete")
+        
+        sutCameraControlVM.stopBroadcast(networkingAPI: networkingAPI) {
+            XCTAssertEqual(sutCameraControlVM.cameraUrl, nil)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5)
+    }
 
 }
