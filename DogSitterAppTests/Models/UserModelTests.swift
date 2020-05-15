@@ -9,7 +9,7 @@
 import XCTest
 @testable import DogSitterApp
 
-class DogSitterAppTests: XCTestCase {
+class UserModelTests: XCTestCase {
 
     let LOGIN_URL = "https://playbowtech.com/api/login/"
     let LOGIN_EMAIL = "test1@playbow.com"
