@@ -8,27 +8,6 @@
 
 import Foundation
 
-struct AngelcamCameraList: Decodable {
-    var results: [Results]
-}
-
-struct Results: Decodable {
-    var streams: [Streams]
-}
-
-struct Streams: Decodable {
-    var format: String?
-    var url: String?
-}
-
-struct LoginResponse: Decodable {
-    var data: AuthToken
-}
-
-struct AuthToken: Decodable {
-    var auth_token: String?
-}
-
 protocol NetworkingAPIProtocol {
     
     func postLogin(email: String, password: String, completionHandler: @escaping (String?) -> Void)
@@ -37,18 +16,12 @@ protocol NetworkingAPIProtocol {
     
 }
 
-
 class NetworkingAPI: NetworkingAPIProtocol {
     
-    // These constants can be moved to a separate file, and broken up as needed
-    let getCamerasUrl = URL(string: "https://api.angelcam.com/v1/cameras/")!
+    let urls = URLs()
     let angelCamAuthHeader = "PersonalAccessToken afec708ac67fbccaa1a9b1c3ec3c31a34d740879"
     let resultsIndex = 0
     let streamsIndex = 2
-    
-    // Login constants
-    let loginUrl = URL(string: "https://playbowtech.com/api/login/")!
-    
     let httpService: HttpService
     
     init(httpService: HttpService) {
@@ -62,7 +35,7 @@ class NetworkingAPI: NetworkingAPIProtocol {
             "password": password
         ]
         
-        self.httpService.postJsonData(url: loginUrl, requestJsonBody: requestJsonBody) { (data) in
+        self.httpService.postJsonData(url: urls.loginUrl, requestJsonBody: requestJsonBody) { (data) in
             
             guard let data = data else {
                 completionHandler(nil)
@@ -80,7 +53,7 @@ class NetworkingAPI: NetworkingAPIProtocol {
     
     func getCameraUrl(completionHandler: @escaping (URL?) -> Void) {
         
-        self.httpService.getData(url: getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
+        self.httpService.getData(url: urls.getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
             
             guard let data = data else {
                 completionHandler(nil)
@@ -98,17 +71,13 @@ class NetworkingAPI: NetworkingAPIProtocol {
     }
     
     func stopBroadcast(completionHandler: @escaping (Success?) -> Void) {
-        
-        // TODO: research stopBroadcast Angelcam API
-        
-        self.httpService.getData(url: getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
+                
+        self.httpService.getData(url: urls.getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
             
             guard let data = data else {
                 completionHandler(nil)
                 return
             }
-//            let cameraList = try? JSONDecoder().decode(AngelcamCameraList.self, from: data)
-            
             completionHandler(true)
         }
     }

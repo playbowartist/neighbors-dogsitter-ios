@@ -30,6 +30,8 @@
 		99586C1A2464A92E008D93E3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C192464A92E008D93E3 /* LoginViewModel.swift */; };
 		99586C1C2464B4E5008D93E3 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */; };
 		997C701D245FEE6C00750353 /* LiveVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997C701C245FEE6C00750353 /* LiveVideoView.swift */; };
+		997D937C246FCFE10030144B /* JsonStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D937B246FCFE10030144B /* JsonStructs.swift */; };
+		997D937E246FDCBC0030144B /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D937D246FDCBC0030144B /* URLs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		99586C192464A92E008D93E3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		997C701C245FEE6C00750353 /* LiveVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVideoView.swift; sourceTree = "<group>"; };
+		997D937B246FCFE10030144B /* JsonStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonStructs.swift; sourceTree = "<group>"; };
+		997D937D246FDCBC0030144B /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,8 @@
 			children = (
 				99586C1224614808008D93E3 /* HttpService.swift */,
 				99586C14246322E9008D93E3 /* NetworkingAPI.swift */,
+				997D937B246FCFE10030144B /* JsonStructs.swift */,
+				997D937D246FDCBC0030144B /* URLs.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				991AB5E3246A5DC3004FE7FA /* Camera.swift in Sources */,
+				997D937E246FDCBC0030144B /* URLs.swift in Sources */,
 				99586C15246322E9008D93E3 /* NetworkingAPI.swift in Sources */,
 				9921DF95245D4F160010F478 /* User.swift in Sources */,
 				99586C1324614808008D93E3 /* HttpService.swift in Sources */,
@@ -394,6 +401,7 @@
 				9921DF74245D4E290010F478 /* SceneDelegate.swift in Sources */,
 				9921DFA7245FC6900010F478 /* CameraControlView.swift in Sources */,
 				9921DF76245D4E290010F478 /* LoginView.swift in Sources */,
+				997D937C246FCFE10030144B /* JsonStructs.swift in Sources */,
 				99586C1A2464A92E008D93E3 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
