@@ -37,27 +37,27 @@ class Camera {
         }
     }
     
-    func stopBroadcast(networkingAPI: NetworkingAPIProtocol?, completionHandler: @escaping (Success?) -> Void) {
-        
-        var stopBroadcastAPI: NetworkingAPIProtocol {
-            if let networkingAPI = networkingAPI {
-                return networkingAPI
-            } else {
-                let session = URLSession(configuration: .default)
-                let httpService = HttpService(session: session)
-                return NetworkingAPI(httpService: httpService)
-            }
-        }
-        
-        stopBroadcastAPI.stopBroadcast { success in
-            guard let success = success else {
-                completionHandler(nil)
-                return
-            }
-            
-            self.broadcastUrl = nil
-            completionHandler(success)
-        }
-    }
+//    func stopBroadcast(networkingAPI: NetworkingAPIProtocol?, completionHandler: @escaping (Success?) -> Void) {
+//        
+//        var stopBroadcastAPI: NetworkingAPIProtocol {
+//            if let networkingAPI = networkingAPI {
+//                return networkingAPI
+//            } else {
+//                let session = URLSession(configuration: .default)
+//                let httpService = HttpService(session: session)
+//                return NetworkingAPI(httpService: httpService)
+//            }
+//        }
+//        
+//        stopBroadcastAPI.stopBroadcast { success in
+//            guard let success = success else {
+//                completionHandler(nil)
+//                return
+//            }
+//            
+//            self.broadcastUrl = nil
+//            completionHandler(success)
+//        }
+//    }
     
 }

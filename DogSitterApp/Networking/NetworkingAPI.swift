@@ -12,7 +12,8 @@ protocol NetworkingAPIProtocol {
     
     func postLogin(email: String, password: String, completionHandler: @escaping (String?) -> Void)
     func getCameraUrl(completionHandler: @escaping (URL?) -> Void)
-    func stopBroadcast(completionHandler: @escaping (Success?) -> Void)
+//    func stopBroadcast(completionHandler: @escaping (Success?) -> Void)
+    func startRecording(completionHandler: @escaping (Success?) -> Void)
     
 }
 
@@ -56,17 +57,27 @@ class NetworkingAPI: NetworkingAPIProtocol {
         self.httpService.getData(url: urls.getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
             
             guard let data = data else {
+                print("no data inside getCameraUrl")
                 completionHandler(nil)
                 return
             }
-            let cameraList = try? JSONDecoder().decode(AngelcamCameraList.self, from: data)
             
+            let cameraList = try? JSONDecoder().decode(AngelcamCameraList.self, from: data)
             guard let cameraUrlString = cameraList?.results[self.resultsIndex].streams[self.streamsIndex].url,
                 let cameraUrl = URL(string: cameraUrlString) else {
                     completionHandler(nil)
                     return
             }
+            print("cameraUrl inside getCameraUrl: ", cameraUrl)
             completionHandler(cameraUrl)
+        }
+    }
+    
+    func startRecording(completionHandler: @escaping (Success?) -> Void) {
+        
+        self.httpService.postReturn204(url: urls.startRecordingUrl, authHeader: angelCamAuthHeader, requestJsonBody: [:]) { (success) in
+            print("success inside startRecording: ", success)
+            completionHandler(success)
         }
     }
     

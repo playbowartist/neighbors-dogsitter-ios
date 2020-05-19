@@ -19,6 +19,7 @@ struct URLs {
     let angelCamBaseUrlString = "https://api.angelcam.com/v1/"
     let getCamerasUrlString = "cameras/"
     let getCamerasUrl = URL(string: "https://api.angelcam.com/v1/cameras/")!
+    let startRecordingUrl = URL(string: "https://api.angelcam.com/v1/cameras/94396/recording/start/")!
     
     func createUrl(baseUrlString: String, urlString: String) -> URL? {
         let urlString = baseUrlString + urlString

@@ -20,7 +20,7 @@
 		9921DF7E245D4E2B0010F478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9921DF7C245D4E2B0010F478 /* LaunchScreen.storyboard */; };
 		9921DF8C245D4E720010F478 /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF8B245D4E720010F478 /* UserModelTests.swift */; };
 		9921DF95245D4F160010F478 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF94245D4F160010F478 /* User.swift */; };
-		9921DF97245D551D0010F478 /* TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF96245D551D0010F478 /* TestDoubles.swift */; };
+		9921DF97245D551D0010F478 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF96245D551D0010F478 /* URLSessionMock.swift */; };
 		9921DF9F245FB8420010F478 /* DogSitterAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF9E245FB8420010F478 /* DogSitterAppUITests.swift */; };
 		9921DFA7245FC6900010F478 /* CameraControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DFA6245FC6900010F478 /* CameraControlView.swift */; };
 		99586C1024613B2B008D93E3 /* HttpServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C0F24613B2B008D93E3 /* HttpServiceTests.swift */; };
@@ -32,6 +32,9 @@
 		997C701D245FEE6C00750353 /* LiveVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997C701C245FEE6C00750353 /* LiveVideoView.swift */; };
 		997D937C246FCFE10030144B /* JsonStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D937B246FCFE10030144B /* JsonStructs.swift */; };
 		997D937E246FDCBC0030144B /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D937D246FDCBC0030144B /* URLs.swift */; };
+		999B834024739A7E00DAF25E /* CameraControl_InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B833F24739A7E00DAF25E /* CameraControl_InteractorTests.swift */; };
+		999B834324739EDD00DAF25E /* CameraControl_Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B834224739EDD00DAF25E /* CameraControl_Interactor.swift */; };
+		999B83452473B52600DAF25E /* DataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B83442473B52600DAF25E /* DataTaskMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +72,7 @@
 		9921DF8B245D4E720010F478 /* UserModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
 		9921DF8D245D4E720010F478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9921DF94245D4F160010F478 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		9921DF96245D551D0010F478 /* TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDoubles.swift; sourceTree = "<group>"; };
+		9921DF96245D551D0010F478 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		9921DF9C245FB8420010F478 /* DogSitterAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogSitterAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9921DF9E245FB8420010F478 /* DogSitterAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSitterAppUITests.swift; sourceTree = "<group>"; };
 		9921DFA0245FB8420010F478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +86,9 @@
 		997C701C245FEE6C00750353 /* LiveVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVideoView.swift; sourceTree = "<group>"; };
 		997D937B246FCFE10030144B /* JsonStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonStructs.swift; sourceTree = "<group>"; };
 		997D937D246FDCBC0030144B /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		999B833F24739A7E00DAF25E /* CameraControl_InteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControl_InteractorTests.swift; sourceTree = "<group>"; };
+		999B834224739EDD00DAF25E /* CameraControl_Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControl_Interactor.swift; sourceTree = "<group>"; };
+		999B83442473B52600DAF25E /* DataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,7 @@
 			children = (
 				991AB5E4246B3C6B004FE7FA /* Views */,
 				99586C182464A908008D93E3 /* View Models */,
+				999B834124739EC100DAF25E /* Interactors */,
 				9921DF93245D4F0A0010F478 /* Models */,
 				99586C11246147C8008D93E3 /* Networking */,
 				9921DF71245D4E290010F478 /* AppDelegate.swift */,
@@ -169,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				99EF06CD246E64C700B01BB9 /* View Models */,
+				999B833E2473994E00DAF25E /* Interactors */,
 				99EF06CC246E64C000B01BB9 /* Models */,
 				99EF06CB246E649500B01BB9 /* Networking */,
 				99EF06CE246E661200B01BB9 /* Mocks */,
@@ -216,6 +224,22 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		999B833E2473994E00DAF25E /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				999B833F24739A7E00DAF25E /* CameraControl_InteractorTests.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		999B834124739EC100DAF25E /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				999B834224739EDD00DAF25E /* CameraControl_Interactor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
 		99EF06CB246E649500B01BB9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +270,8 @@
 		99EF06CE246E661200B01BB9 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				9921DF96245D551D0010F478 /* TestDoubles.swift */,
+				9921DF96245D551D0010F478 /* URLSessionMock.swift */,
+				999B83442473B52600DAF25E /* DataTaskMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -395,6 +420,7 @@
 				99586C15246322E9008D93E3 /* NetworkingAPI.swift in Sources */,
 				9921DF95245D4F160010F478 /* User.swift in Sources */,
 				99586C1324614808008D93E3 /* HttpService.swift in Sources */,
+				999B834324739EDD00DAF25E /* CameraControl_Interactor.swift in Sources */,
 				9921DF72245D4E290010F478 /* AppDelegate.swift in Sources */,
 				997C701D245FEE6C00750353 /* LiveVideoView.swift in Sources */,
 				991AB5DF246A5A7C004FE7FA /* CameraControlViewModel.swift in Sources */,
@@ -411,10 +437,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				99586C1C2464B4E5008D93E3 /* LoginViewModelTests.swift in Sources */,
+				999B834024739A7E00DAF25E /* CameraControl_InteractorTests.swift in Sources */,
 				991AB5E6246BCD5E004FE7FA /* NetworkingTestHelpers.swift in Sources */,
 				99586C172463646C008D93E3 /* NetworkingAPITests.swift in Sources */,
-				9921DF97245D551D0010F478 /* TestDoubles.swift in Sources */,
+				9921DF97245D551D0010F478 /* URLSessionMock.swift in Sources */,
 				99586C1024613B2B008D93E3 /* HttpServiceTests.swift in Sources */,
+				999B83452473B52600DAF25E /* DataTaskMock.swift in Sources */,
 				9921DF8C245D4E720010F478 /* UserModelTests.swift in Sources */,
 				991AB5DD246A555E004FE7FA /* CameraControlViewModelTests.swift in Sources */,
 				991AB5E1246A5D5B004FE7FA /* CameraModelTests.swift in Sources */,

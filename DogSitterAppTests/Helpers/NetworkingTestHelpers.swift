@@ -36,7 +36,7 @@ class NetworkingTestHelpers {
         "results": []
     ]
     
-    func createNetworkingAPIMock(statusCode: Int, responseDict: [String: Any]) -> NetworkingAPI {
+    func createNetworkingAPIMock(statusCode: Int, responseDict: [String: Any]) -> NetworkingAPIProtocol {
         let session = URLSessionMock(statusCode: statusCode, responseDict: responseDict)
         let httpService = HttpService(session: session)
         return NetworkingAPI(httpService: httpService)

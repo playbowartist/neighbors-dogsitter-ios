@@ -21,30 +21,5 @@ class CameraControlViewModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testStartSavesCameraUrl() throws {
-        let sutCameraControlVM = CameraControlViewModel(camera: Camera())
-        sutCameraControlVM.cameraUrl = nil
-        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.startResponseDict)
-        let expectation = XCTestExpectation(description: "Networking task complete")
-        
-        sutCameraControlVM.startBroadcast(networkingAPI: networkingAPI) {
-            XCTAssertEqual(sutCameraControlVM.cameraUrl, self.networkingHelper.plantCamHlsUrl)
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 5)
-    }
-    
-    func testStopCameraClearsUrl() throws {
-        let sutCameraControlVM = CameraControlViewModel(camera: Camera())
-        sutCameraControlVM.cameraUrl = networkingHelper.plantCamHlsUrl
-        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.stopResponseDict)
-        let expectation = XCTestExpectation(description: "Networking task complete")
-        
-        sutCameraControlVM.stopBroadcast(networkingAPI: networkingAPI) {
-            XCTAssertEqual(sutCameraControlVM.cameraUrl, nil)
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 5)
-    }
-
+    // TODO: Test data changes to VM will result in updated UI?
 }
