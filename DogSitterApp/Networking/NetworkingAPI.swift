@@ -57,7 +57,6 @@ class NetworkingAPI: NetworkingAPIProtocol {
         self.httpService.getData(url: urls.getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
             
             guard let data = data else {
-                print("no data inside getCameraUrl")
                 completionHandler(nil)
                 return
             }
@@ -68,7 +67,6 @@ class NetworkingAPI: NetworkingAPIProtocol {
                     completionHandler(nil)
                     return
             }
-            print("cameraUrl inside getCameraUrl: ", cameraUrl)
             completionHandler(cameraUrl)
         }
     }
@@ -76,7 +74,6 @@ class NetworkingAPI: NetworkingAPIProtocol {
     func startRecording(completionHandler: @escaping (Success?) -> Void) {
         
         self.httpService.postReturn204(url: urls.startRecordingUrl, authHeader: angelCamAuthHeader, requestJsonBody: [:]) { (success) in
-            print("success inside startRecording: ", success)
             completionHandler(success)
         }
     }

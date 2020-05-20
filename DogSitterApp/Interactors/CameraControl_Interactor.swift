@@ -43,19 +43,25 @@ class CameraControl_Interactor {
         // Check startRecording was successful before retrieving cameraUrl
         startRecordingAPI.startRecording { (success) in
             guard success == true else {
-                self.cameraControlVM.cameraUrl = nil
+                DispatchQueue.main.async {
+                    self.cameraControlVM.cameraUrl = nil
+                }
                 completionHandler?()
                 return
             }
             
             getCameraAPI.getCameraUrl { (url) in
                 guard let url = url else {
-                    self.cameraControlVM.cameraUrl = nil
+                    DispatchQueue.main.async {
+                        self.cameraControlVM.cameraUrl = nil
+                    }
                     completionHandler?()
                     return
                 }
 
-                self.cameraControlVM.cameraUrl = url
+                DispatchQueue.main.async {
+                    self.cameraControlVM.cameraUrl = url
+                }
                 completionHandler?()
             }
         }
