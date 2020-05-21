@@ -16,7 +16,6 @@ class CameraControl_Interactor {
         self.cameraControlVM = cameraControlVM
     }
     
-    // TODO: Refactor the following code
     func startRecording(networkingAPI: [NetworkingAPIProtocol]?, completionHandler: (() -> Void)?) {
         
         // Determine whether networkingAPI is passed as a parameter
@@ -42,11 +41,13 @@ class CameraControl_Interactor {
         
         // Check startRecording was successful before retrieving cameraUrl
         startRecordingAPI.startRecording { (success) in
+            // completionHandler must be inside DispatchQueue
+            // otherwise, it will be executed before cameraUrl assignment
             guard success == true else {
                 DispatchQueue.main.async {
                     self.cameraControlVM.cameraUrl = nil
+                    completionHandler?()
                 }
-                completionHandler?()
                 return
             }
             
@@ -54,30 +55,39 @@ class CameraControl_Interactor {
                 guard let url = url else {
                     DispatchQueue.main.async {
                         self.cameraControlVM.cameraUrl = nil
+                        completionHandler?()
                     }
-                    completionHandler?()
                     return
                 }
-
+                
                 DispatchQueue.main.async {
                     self.cameraControlVM.cameraUrl = url
+                    completionHandler?()
                 }
-                completionHandler?()
             }
         }
     }
     
-//    func stopBroadcast(networkingAPI: NetworkingAPIProtocol?, completionHandler: (() -> Void)?) {
-//
-//        self.camera.stopBroadcast(networkingAPI: networkingAPI) { success in
-//            guard let success = success else {
-//                self.cameraUrl = nil
-//                completionHandler?()
-//                return
-//            }
-//            self.cameraUrl = nil
-//            print("Camera stopped successfully: ", success)
-//            completionHandler?()
-//        }
-//    }
+    func stopRecording(networkingAPI: NetworkingAPIProtocol?, completionHandler: (() -> Void)?) {
+        
+        // Determine whether networkingAPI is passed as a parameter
+        var stopRecordingAPI: NetworkingAPIProtocol {
+            if let networkingAPI = networkingAPI {
+                return networkingAPI
+            } else {
+                let session = URLSession(configuration: .default)
+                let httpService = HttpService(session: session)
+                return NetworkingAPI(httpService: httpService)
+            }
+        }
+        
+        // Set cameraUrl to nil whether successful or not
+        stopRecordingAPI.stopRecording { (success) in
+            
+            DispatchQueue.main.async {
+                self.cameraControlVM.cameraUrl = nil
+                completionHandler?()
+            }
+        }
+    }
 }

@@ -42,8 +42,8 @@ class CameraControl_InteractorTests: XCTestCase {
         let sutInteractor = CameraControl_Interactor(cameraControlVM: cameraControlVM)
         cameraControlVM.cameraUrl = nil
         
-        let startRecordingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 204, responseDict: [:])
-        let getCameraAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.startResponseDict)
+        let startRecordingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 204, responseDict: networkingHelper.empty204ResponseDict)
+        let getCameraAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.getCamerasResponseDict)
         let expectation = XCTestExpectation(description: "Networking task complete")
         
         sutInteractor.startRecording(networkingAPI: [startRecordingAPI, getCameraAPI]) {
@@ -55,17 +55,18 @@ class CameraControl_InteractorTests: XCTestCase {
     
     // TODO: Test that authHeader is passed to NetworkingAPI / HttpService for postReturn204()
     
-//    func testStopCameraClearsUrl() throws {
-//        let sutCameraControlVM = CameraControlViewModel()
-//        sutCameraControlVM.cameraUrl = networkingHelper.plantCamHlsUrl
-//        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.stopResponseDict)
-//        let expectation = XCTestExpectation(description: "Networking task complete")
-//
-//        sutCameraControlVM.stopBroadcast(networkingAPI: networkingAPI) {
-//            XCTAssertEqual(sutCameraControlVM.cameraUrl, nil)
-//            expectation.fulfill()
-//        }
-//        wait(for: [expectation], timeout: 5)
-//    }
+    func testStopCameraClearsUrl() throws {
+        let cameraControlVM = CameraControlViewModel()
+        let sutInteractor = CameraControl_Interactor(cameraControlVM: cameraControlVM)
+        cameraControlVM.cameraUrl = networkingHelper.plantCamHlsUrl
+        
+        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 204, responseDict: networkingHelper.empty204ResponseDict)
+        let expectation = XCTestExpectation(description: "Networking task complete")
 
+        sutInteractor.stopRecording(networkingAPI: networkingAPI) {
+            XCTAssertEqual(cameraControlVM.cameraUrl, nil)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5)
+    }
 }

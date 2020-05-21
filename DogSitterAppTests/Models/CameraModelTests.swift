@@ -24,7 +24,7 @@ class CameraModelTests: XCTestCase {
     func testStartReturnsBroadcastUrl() {
         var urlReturned: URL? = nil
         let sutCamera = Camera()
-        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.startResponseDict)
+        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.getCamerasResponseDict)
         let expectation = XCTestExpectation(description: "Networking task complete")
         
         sutCamera.startBroadcast(networkingAPI: networkingAPI) { url in
@@ -40,7 +40,7 @@ class CameraModelTests: XCTestCase {
     func testStartSavesBroadcastUrlAsProperty() {
         var urlReturned: URL? = nil
         let sutCamera = Camera()
-        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.startResponseDict)
+        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.getCamerasResponseDict)
         let expectation = XCTestExpectation(description: "Networking task complete")
         
         sutCamera.startBroadcast(networkingAPI: networkingAPI) { url in

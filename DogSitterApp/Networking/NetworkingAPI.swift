@@ -12,8 +12,8 @@ protocol NetworkingAPIProtocol {
     
     func postLogin(email: String, password: String, completionHandler: @escaping (String?) -> Void)
     func getCameraUrl(completionHandler: @escaping (URL?) -> Void)
-//    func stopBroadcast(completionHandler: @escaping (Success?) -> Void)
     func startRecording(completionHandler: @escaping (Success?) -> Void)
+    func stopRecording(completionHandler: @escaping (Success?) -> Void)
     
 }
 
@@ -78,15 +78,11 @@ class NetworkingAPI: NetworkingAPIProtocol {
         }
     }
     
-    func stopBroadcast(completionHandler: @escaping (Success?) -> Void) {
+    func stopRecording(completionHandler: @escaping (Success?) -> Void) {
                 
-        self.httpService.getData(url: urls.getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
-            
-            guard let data = data else {
-                completionHandler(nil)
-                return
-            }
-            completionHandler(true)
+        self.httpService.postReturn204(url: urls.stopRecordingUrl, authHeader: angelCamAuthHeader, requestJsonBody: [:]) { (success) in
+            completionHandler(success)
         }
     }
+    
 }

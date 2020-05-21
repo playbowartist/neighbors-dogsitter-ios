@@ -32,8 +32,8 @@ struct CameraControlView: View {
                     .startRecording(networkingAPI: nil, completionHandler: nil)
             }.padding()
             Button("Stop Camera") {
-                // TODO: Call interactor's stopRecording()
-                self.cameraControlVM.cameraUrl = nil
+                self.mutableCameraControl_Interactor()
+                    .stopRecording(networkingAPI: nil, completionHandler: nil)
             }.padding()
         }
         .navigationBarTitle("Camera Control", displayMode: .inline)
