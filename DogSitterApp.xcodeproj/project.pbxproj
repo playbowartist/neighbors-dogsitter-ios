@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		991AB5DD246A555E004FE7FA /* CameraControlViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5DC246A555E004FE7FA /* CameraControlViewModelTests.swift */; };
 		991AB5DF246A5A7C004FE7FA /* CameraControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */; };
 		991AB5E1246A5D5B004FE7FA /* CameraModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5E0246A5D5B004FE7FA /* CameraModelTests.swift */; };
-		991AB5E3246A5DC3004FE7FA /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5E2246A5DC3004FE7FA /* Camera.swift */; };
 		991AB5E6246BCD5E004FE7FA /* NetworkingTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5E5246BCD5E004FE7FA /* NetworkingTestHelpers.swift */; };
 		9921DF72245D4E290010F478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF71245D4E290010F478 /* AppDelegate.swift */; };
 		9921DF74245D4E290010F478 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF73245D4E290010F478 /* SceneDelegate.swift */; };
@@ -31,6 +29,10 @@
 		99586C1C2464B4E5008D93E3 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */; };
 		997D937C246FCFE10030144B /* JsonStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D937B246FCFE10030144B /* JsonStructs.swift */; };
 		997D937E246FDCBC0030144B /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D937D246FDCBC0030144B /* URLs.swift */; };
+		998039B82478883A001B69B9 /* RecordingListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998039B72478883A001B69B9 /* RecordingListInteractorTests.swift */; };
+		998039BA2478894A001B69B9 /* RecordingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998039B92478894A001B69B9 /* RecordingListViewModel.swift */; };
+		998039BC24788A55001B69B9 /* RecordingListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998039BB24788A55001B69B9 /* RecordingListInteractor.swift */; };
+		998039BE2478DDBF001B69B9 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998039BD2478DDBF001B69B9 /* Video.swift */; };
 		999B834024739A7E00DAF25E /* CameraControl_InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B833F24739A7E00DAF25E /* CameraControl_InteractorTests.swift */; };
 		999B834324739EDD00DAF25E /* CameraControl_Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B834224739EDD00DAF25E /* CameraControl_Interactor.swift */; };
 		999B83452473B52600DAF25E /* DataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B83442473B52600DAF25E /* DataTaskMock.swift */; };
@@ -56,10 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		991AB5DC246A555E004FE7FA /* CameraControlViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlViewModelTests.swift; sourceTree = "<group>"; };
 		991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlViewModel.swift; sourceTree = "<group>"; };
 		991AB5E0246A5D5B004FE7FA /* CameraModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTests.swift; sourceTree = "<group>"; };
-		991AB5E2246A5DC3004FE7FA /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		991AB5E5246BCD5E004FE7FA /* NetworkingTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTestHelpers.swift; sourceTree = "<group>"; };
 		9921DF6E245D4E290010F478 /* DogSitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogSitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9921DF71245D4E290010F478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +86,10 @@
 		99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		997D937B246FCFE10030144B /* JsonStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonStructs.swift; sourceTree = "<group>"; };
 		997D937D246FDCBC0030144B /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		998039B72478883A001B69B9 /* RecordingListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListInteractorTests.swift; sourceTree = "<group>"; };
+		998039B92478894A001B69B9 /* RecordingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListViewModel.swift; sourceTree = "<group>"; };
+		998039BB24788A55001B69B9 /* RecordingListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListInteractor.swift; sourceTree = "<group>"; };
+		998039BD2478DDBF001B69B9 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		999B833F24739A7E00DAF25E /* CameraControl_InteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControl_InteractorTests.swift; sourceTree = "<group>"; };
 		999B834224739EDD00DAF25E /* CameraControl_Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControl_Interactor.swift; sourceTree = "<group>"; };
 		999B83442473B52600DAF25E /* DataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskMock.swift; sourceTree = "<group>"; };
@@ -193,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				9921DF94245D4F160010F478 /* User.swift */,
-				991AB5E2246A5DC3004FE7FA /* Camera.swift */,
+				998039BD2478DDBF001B69B9 /* Video.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,6 +227,7 @@
 			children = (
 				991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */,
 				99586C192464A92E008D93E3 /* LoginViewModel.swift */,
+				998039B92478894A001B69B9 /* RecordingListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				999B833F24739A7E00DAF25E /* CameraControl_InteractorTests.swift */,
+				998039B72478883A001B69B9 /* RecordingListInteractorTests.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				999B834224739EDD00DAF25E /* CameraControl_Interactor.swift */,
+				998039BB24788A55001B69B9 /* RecordingListInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -265,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */,
-				991AB5DC246A555E004FE7FA /* CameraControlViewModelTests.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -418,7 +424,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991AB5E3246A5DC3004FE7FA /* Camera.swift in Sources */,
 				999B834924751E3800DAF25E /* VideoPlayerSwiftUIView.swift in Sources */,
 				997D937E246FDCBC0030144B /* URLs.swift in Sources */,
 				99586C15246322E9008D93E3 /* NetworkingAPI.swift in Sources */,
@@ -430,6 +435,9 @@
 				991AB5DF246A5A7C004FE7FA /* CameraControlViewModel.swift in Sources */,
 				9921DF74245D4E290010F478 /* SceneDelegate.swift in Sources */,
 				9921DFA7245FC6900010F478 /* CameraControlView.swift in Sources */,
+				998039BE2478DDBF001B69B9 /* Video.swift in Sources */,
+				998039BA2478894A001B69B9 /* RecordingListViewModel.swift in Sources */,
+				998039BC24788A55001B69B9 /* RecordingListInteractor.swift in Sources */,
 				9921DF76245D4E290010F478 /* LoginView.swift in Sources */,
 				997D937C246FCFE10030144B /* JsonStructs.swift in Sources */,
 				99586C1A2464A92E008D93E3 /* LoginViewModel.swift in Sources */,
@@ -443,12 +451,12 @@
 				99586C1C2464B4E5008D93E3 /* LoginViewModelTests.swift in Sources */,
 				999B834024739A7E00DAF25E /* CameraControl_InteractorTests.swift in Sources */,
 				991AB5E6246BCD5E004FE7FA /* NetworkingTestHelpers.swift in Sources */,
+				998039B82478883A001B69B9 /* RecordingListInteractorTests.swift in Sources */,
 				99586C172463646C008D93E3 /* NetworkingAPITests.swift in Sources */,
 				9921DF97245D551D0010F478 /* URLSessionMock.swift in Sources */,
 				99586C1024613B2B008D93E3 /* HttpServiceTests.swift in Sources */,
 				999B83452473B52600DAF25E /* DataTaskMock.swift in Sources */,
 				9921DF8C245D4E720010F478 /* UserModelTests.swift in Sources */,
-				991AB5DD246A555E004FE7FA /* CameraControlViewModelTests.swift in Sources */,
 				991AB5E1246A5D5B004FE7FA /* CameraModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,11 +8,21 @@
 
 import Foundation
 
-struct AngelcamCameraList: Decodable {
-    var results: [Results]
+// postLogin
+struct LoginResponse: Decodable {
+    var data: AuthToken
 }
 
-struct Results: Decodable {
+struct AuthToken: Decodable {
+    var auth_token: String?
+}
+
+// getCameras
+struct GetCameraResponse: Decodable {
+    var results: [GetCameraResults]
+}
+
+struct GetCameraResults: Decodable {
     var streams: [Streams]
 }
 
@@ -21,10 +31,16 @@ struct Streams: Decodable {
     var url: String?
 }
 
-struct LoginResponse: Decodable {
-    var data: AuthToken
+// getRecordingList
+struct GetRecordingListResponse: Decodable {
+    var results: [GetRecordingListResults]
 }
 
-struct AuthToken: Decodable {
-    var auth_token: String?
+struct GetRecordingListResults: Decodable {
+    var download_url: String?
+    var name: String?
+    var start: String?
+    var end: String?
 }
+
+

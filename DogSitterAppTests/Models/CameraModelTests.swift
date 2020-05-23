@@ -21,38 +21,38 @@ class CameraModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testStartReturnsBroadcastUrl() {
-        var urlReturned: URL? = nil
-        let sutCamera = Camera()
-        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.getCamerasResponseDict)
-        let expectation = XCTestExpectation(description: "Networking task complete")
-        
-        sutCamera.startBroadcast(networkingAPI: networkingAPI) { url in
-            urlReturned = url
-            XCTAssertEqual(urlReturned, self.networkingHelper.plantCamHlsUrl)
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 5)
-        XCTAssertNotNil(urlReturned)
-    }
-    
-    func testStartSavesBroadcastUrlAsProperty() {
-        var urlReturned: URL? = nil
-        let sutCamera = Camera()
-        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.getCamerasResponseDict)
-        let expectation = XCTestExpectation(description: "Networking task complete")
-        
-        sutCamera.startBroadcast(networkingAPI: networkingAPI) { url in
-            urlReturned = url
-            XCTAssertEqual(sutCamera.broadcastUrl, self.networkingHelper.plantCamHlsUrl)
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 5)
-        XCTAssertNotNil(urlReturned)
-
-    }
+//    func testStartReturnsBroadcastUrl() {
+//        var urlReturned: URL? = nil
+//        let sutCamera = Camera()
+//        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.getCamerasResponseDict)
+//        let expectation = XCTestExpectation(description: "Networking task complete")
+//        
+//        sutCamera.startBroadcast(networkingAPI: networkingAPI) { url in
+//            urlReturned = url
+//            XCTAssertEqual(urlReturned, self.networkingHelper.plantCamHlsUrl)
+//            expectation.fulfill()
+//        }
+//        
+//        wait(for: [expectation], timeout: 5)
+//        XCTAssertNotNil(urlReturned)
+//    }
+//    
+//    func testStartSavesBroadcastUrlAsProperty() {
+//        var urlReturned: URL? = nil
+//        let sutCamera = Camera()
+//        let networkingAPI = networkingHelper.createNetworkingAPIMock(statusCode: 200, responseDict: networkingHelper.getCamerasResponseDict)
+//        let expectation = XCTestExpectation(description: "Networking task complete")
+//        
+//        sutCamera.startBroadcast(networkingAPI: networkingAPI) { url in
+//            urlReturned = url
+//            XCTAssertEqual(sutCamera.broadcastUrl, self.networkingHelper.plantCamHlsUrl)
+//            expectation.fulfill()
+//        }
+//        
+//        wait(for: [expectation], timeout: 5)
+//        XCTAssertNotNil(urlReturned)
+//
+//    }
     
 //    func testStopReturnsSuccessAndClearsBroadcastUrlProperty() {
 //        let urlInitial: URL? = networkingHelper.plantCamHlsUrl

@@ -8,12 +8,15 @@
 
 import Foundation
 
+typealias Success = Bool
+
 protocol NetworkingAPIProtocol {
     
     func postLogin(email: String, password: String, completionHandler: @escaping (String?) -> Void)
     func getCameraUrl(completionHandler: @escaping (URL?) -> Void)
     func startRecording(completionHandler: @escaping (Success?) -> Void)
     func stopRecording(completionHandler: @escaping (Success?) -> Void)
+    func getRecordingList(completionHandler: @escaping ([Video]?) -> Void)
     
 }
 
@@ -61,7 +64,7 @@ class NetworkingAPI: NetworkingAPIProtocol {
                 return
             }
             
-            let cameraList = try? JSONDecoder().decode(AngelcamCameraList.self, from: data)
+            let cameraList = try? JSONDecoder().decode(GetCameraResponse.self, from: data)
             guard let cameraUrlString = cameraList?.results[self.resultsIndex].streams[self.streamsIndex].url,
                 let cameraUrl = URL(string: cameraUrlString) else {
                     completionHandler(nil)
@@ -85,4 +88,36 @@ class NetworkingAPI: NetworkingAPIProtocol {
         }
     }
     
+    func getRecordingList(completionHandler: @escaping ([Video]?) -> Void) {
+        
+        self.httpService.getData(url: urls.getRecordingListUrl, authHeader: angelCamAuthHeader) { (data) in
+            
+            guard let data = data else {
+                completionHandler(nil)
+                return
+            }
+            
+            var videoList = [Video]()
+            let iso8601DateFormatter = ISO8601DateFormatter()
+            
+            let response = try? JSONDecoder().decode(GetRecordingListResponse.self, from: data)
+            
+            if let response = response {
+                
+                let results = response.results
+                
+                for result in results {
+                    
+                    let url = URL(string: result.download_url!)!
+                    let startDate = iso8601DateFormatter.date(from: result.start!)
+                    let stopDate = iso8601DateFormatter.date(from: result.end!)
+                    
+                    videoList.append(Video(url: url, name: result.name, startDate: startDate, stopDate: stopDate))
+                }
+                
+                completionHandler(videoList)
+            }
+            
+        }
+    }
 }
