@@ -8,47 +8,24 @@
 
 import Foundation
 
-struct AngelcamCameraList: Decodable {
-    var results: [Results]
-}
-
-struct Results: Decodable {
-    var streams: [Streams]
-}
-
-struct Streams: Decodable {
-    var format: String?
-    var url: String?
-}
-
-struct LoginResponse: Decodable {
-    var data: AuthToken
-}
-
-struct AuthToken: Decodable {
-    var auth_token: String?
-}
+typealias Success = Bool
 
 protocol NetworkingAPIProtocol {
     
     func postLogin(email: String, password: String, completionHandler: @escaping (String?) -> Void)
     func getCameraUrl(completionHandler: @escaping (URL?) -> Void)
-    func stopBroadcast(completionHandler: @escaping (Success?) -> Void)
+    func startRecording(completionHandler: @escaping (Success?) -> Void)
+    func stopRecording(completionHandler: @escaping (Success?) -> Void)
+    func getRecordingList(completionHandler: @escaping ([Video]?) -> Void)
     
 }
 
-
 class NetworkingAPI: NetworkingAPIProtocol {
     
-    // These constants can be moved to a separate file, and broken up as needed
-    let getCamerasUrl = URL(string: "https://api.angelcam.com/v1/cameras/")!
+    let urls = URLs()
     let angelCamAuthHeader = "PersonalAccessToken afec708ac67fbccaa1a9b1c3ec3c31a34d740879"
     let resultsIndex = 0
     let streamsIndex = 2
-    
-    // Login constants
-    let loginUrl = URL(string: "https://playbowtech.com/api/login/")!
-    
     let httpService: HttpService
     
     init(httpService: HttpService) {
@@ -62,7 +39,7 @@ class NetworkingAPI: NetworkingAPIProtocol {
             "password": password
         ]
         
-        self.httpService.postJsonData(url: loginUrl, requestJsonBody: requestJsonBody) { (data) in
+        self.httpService.postJsonData(url: urls.loginUrl, requestJsonBody: requestJsonBody) { (data) in
             
             guard let data = data else {
                 completionHandler(nil)
@@ -80,14 +57,14 @@ class NetworkingAPI: NetworkingAPIProtocol {
     
     func getCameraUrl(completionHandler: @escaping (URL?) -> Void) {
         
-        self.httpService.getData(url: getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
+        self.httpService.getData(url: urls.getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
             
             guard let data = data else {
                 completionHandler(nil)
                 return
             }
-            let cameraList = try? JSONDecoder().decode(AngelcamCameraList.self, from: data)
             
+            let cameraList = try? JSONDecoder().decode(GetCameraResponse.self, from: data)
             guard let cameraUrlString = cameraList?.results[self.resultsIndex].streams[self.streamsIndex].url,
                 let cameraUrl = URL(string: cameraUrlString) else {
                     completionHandler(nil)
@@ -97,19 +74,50 @@ class NetworkingAPI: NetworkingAPIProtocol {
         }
     }
     
-    func stopBroadcast(completionHandler: @escaping (Success?) -> Void) {
+    func startRecording(completionHandler: @escaping (Success?) -> Void) {
         
-        // TODO: research stopBroadcast Angelcam API
+        self.httpService.postReturn204(url: urls.startRecordingUrl, authHeader: angelCamAuthHeader, requestJsonBody: [:]) { (success) in
+            completionHandler(success)
+        }
+    }
+    
+    func stopRecording(completionHandler: @escaping (Success?) -> Void) {
+                
+        self.httpService.postReturn204(url: urls.stopRecordingUrl, authHeader: angelCamAuthHeader, requestJsonBody: [:]) { (success) in
+            completionHandler(success)
+        }
+    }
+    
+    func getRecordingList(completionHandler: @escaping ([Video]?) -> Void) {
         
-        self.httpService.getData(url: getCamerasUrl, authHeader: angelCamAuthHeader) { (data) in
+        self.httpService.getData(url: urls.getRecordingListUrl, authHeader: angelCamAuthHeader) { (data) in
             
             guard let data = data else {
                 completionHandler(nil)
                 return
             }
-//            let cameraList = try? JSONDecoder().decode(AngelcamCameraList.self, from: data)
             
-            completionHandler(true)
+            var videoList = [Video]()
+            let iso8601DateFormatter = ISO8601DateFormatter()
+            
+            let response = try? JSONDecoder().decode(GetRecordingListResponse.self, from: data)
+            
+            if let response = response {
+                
+                let results = response.results
+                
+                for result in results {
+                    
+                    let url = URL(string: result.download_url!)!
+                    let startDate = iso8601DateFormatter.date(from: result.start!)
+                    let stopDate = iso8601DateFormatter.date(from: result.end!)
+                    
+                    videoList.append(Video(url: url, name: result.name, startDate: startDate, stopDate: stopDate))
+                }
+                
+                completionHandler(videoList)
+            }
+            
         }
     }
 }

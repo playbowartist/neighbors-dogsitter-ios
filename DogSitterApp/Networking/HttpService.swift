@@ -8,6 +8,13 @@
 
 import Foundation
 
+protocol URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+        -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol { }
+
 class HttpService {
     
     let session: URLSessionProtocol
@@ -62,6 +69,33 @@ class HttpService {
                     return
             }
             completionHandler(data)
+        }.resume()
+    }
+    
+    func postReturn204(url: URL, authHeader: String?, requestJsonBody: [String: Any], completionHandler: @escaping (Success) -> Void) {
+        guard let requestBody = try?
+            JSONSerialization.data(withJSONObject: requestJsonBody, options: .sortedKeys) else {
+                return
+        }
+        let contentType = "application/json"
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = requestBody
+        urlRequest.addValue(contentType, forHTTPHeaderField: "Content-Type")
+        if let authHeader = authHeader {
+            urlRequest.addValue(authHeader, forHTTPHeaderField: "Authorization")
+        }
+        
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            let STATUS_CODE_204 = 204
+            
+            // Check that HttpResponse's status code = 204
+            guard let httpResponse = response as? HTTPURLResponse,
+                httpResponse.statusCode == STATUS_CODE_204 else {
+                    completionHandler(false)
+                    return
+            }
+            completionHandler(true)
         }.resume()
     }
 }
