@@ -403,6 +403,7 @@ DEPENDENCIES:
   - Firebase/Functions
   - Firebase/Messaging
   - FirebaseFirestoreSwift
+  - FirebaseInstanceID
   - FirebaseUI/Auth
   - FirebaseUI/Email
   - FirebaseUI/Google
@@ -479,6 +480,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
 
-PODFILE CHECKSUM: 2e30b73ce6abbcd7961247ee4799eb21195d8941
+PODFILE CHECKSUM: d5f3e1102280da204d313d6abf6057dc00364f31
 
 COCOAPODS: 1.9.1
