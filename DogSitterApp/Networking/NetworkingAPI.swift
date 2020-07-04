@@ -103,7 +103,6 @@ class NetworkingAPI: NetworkingAPIProtocol {
             let response = try? JSONDecoder().decode(GetRecordingListResponse.self, from: data)
             
             if let response = response {
-                
                 let results = response.results
                 
                 for result in results {

@@ -48,4 +48,24 @@ class LoginViewModel {
             completionHandler?()
         }
     }
+    
+    func register(completionHandler: (() -> Void)?) {
+        
+//        let firebaseAuth = FirebaseAuthentication()
+//        
+//        firebaseAuth.register(withEmail: self.email, password: self.password) { (result) in
+//            
+//            switch result {
+//            case .success(let user):
+//                self.user = user
+//                print("user: ", user)
+//                
+//            case .failure(let error):
+//                print("error: ", error)
+//            }
+//            
+//            completionHandler?()
+//        }
+        
+    }
 }

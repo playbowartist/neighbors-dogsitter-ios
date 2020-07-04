@@ -17,7 +17,7 @@ class RecordingListInteractor {
     }
     
     func getRecordingList(networkingAPI: NetworkingAPIProtocol?, completionHandler: (() -> Void)?) {
-        
+                
         var getRecordingListAPI: NetworkingAPIProtocol {
             if let networkingAPI = networkingAPI {
                 return networkingAPI
@@ -29,9 +29,16 @@ class RecordingListInteractor {
         }
         
         getRecordingListAPI.getRecordingList { (videoList) in
-            self.recordingListVM.videoList = videoList
-            
+            if let videoList = videoList {
+                DispatchQueue.main.async {
+                    self.recordingListVM.videoList = videoList
+                }
+            }
             completionHandler?()
         }
+    }
+    
+    func setRecordingSelected(videoUrl: URL) {
+        self.recordingListVM.videoUrl = videoUrl
     }
 }

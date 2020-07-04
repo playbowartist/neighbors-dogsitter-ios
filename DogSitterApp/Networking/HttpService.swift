@@ -64,7 +64,6 @@ class HttpService {
             guard let data = data,
                 let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == STATUS_CODE_200 else {
-                    print("httpResponse.statusCode: ", (response as! HTTPURLResponse).statusCode)
                     completionHandler(nil)
                     return
             }

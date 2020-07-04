@@ -42,10 +42,8 @@ class NetworkingTestHelpers {
         ]
     ]
     
-    let getRecordingListResponseDict: [String: Any?] = [
+    let getRecordingListResponseDict: [String: Any] = [
         "count": 2,
-        "next": nil,
-        "previous": nil,
         "results": [
             [
                 "id": "a328e63e-7b4f-40fe-ac11-9e725bb9c751",

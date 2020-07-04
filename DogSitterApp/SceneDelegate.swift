@@ -8,10 +8,14 @@
 
 import UIKit
 import SwiftUI
+import FirebaseUI
+import FirebaseAuth
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, FUIAuthDelegate {
 
     var window: UIWindow?
+    var userSettings = UserSettings()
+    let authUI = FUIAuth.defaultAuthUI()!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -20,12 +24,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let loginView = LoginView()
-
-        // Use a UIHostingController as window root view controller.
+//        let loginView = LoginView()
+        
+        
+//        // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
+            
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: loginView)
+            window.rootViewController = UIHostingController(rootView: FirebaseAuthView().environmentObject(userSettings))
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -59,6 +65,94 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        print("inside scene openUrlContexts")
+        
+        for context in URLContexts {
+          print("url: \(context.url.absoluteURL)")
+          print("scheme: \(context.url.scheme)")
+          print("host: \(context.url.host)")
+          print("path: \(context.url.path)")
+          print("components: \(context.url.pathComponents)")
+        }
+    }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        print("\ninside scene continue userActivity\n")
+        
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+          let urlToOpen = userActivity.webpageURL else {
+            return
+        }
 
+        
+        let urlString = urlToOpen.absoluteString
+        let cleanString = urlString.removingPercentEncoding!
+        let cleanUrl = URL(string: cleanString)!
+        print("cleanUrl inside continue userActivity: ", cleanUrl)
+        
+        myhandleOpenUrl(url: cleanUrl, sourceApplication: Bundle.main.bundleIdentifier)
+        
+//        self.firebaseAuthView.handleOpen(url: cleanUrl, sourceApplication: Bundle.main.bundleIdentifier)
+        
+//        FUIAuth.defaultAuthUI()?.handleOpen(cleanUrl, sourceApplication: Bundle.main.bundleIdentifier)
+    }
+    
+    func myhandleOpenUrl(url: URL, sourceApplication: String?) {
+        
+        let emailLink = url.absoluteString
+        
+        var urlComponents = URLComponents(string: emailLink)!
+        var continueUrlString: String?
+        
+        for queryItem in urlComponents.queryItems! {
+            
+    //        print("queryItem: ", queryItem)
+//            print("queryItem.name: ", queryItem.name)
+            
+            if queryItem.name == "continueUrl" {
+                continueUrlString = queryItem.value
+//                print("continueUrlString: ", continueUrlString)
+            }
+        }
+        print("\nfinal continueUrl: ", continueUrlString)
+
+        var urlParamDict = [String: String]()
+        var continueUrlComponents = URLComponents(string: continueUrlString!)!
+        
+        for queryItem in continueUrlComponents.queryItems! {
+            urlParamDict[queryItem.name] = queryItem.value
+            print("key: ", queryItem.name, " value: ", queryItem.value)
+        }
+        
+        let savedEmail = UserDefaults.standard.string(forKey: "FIRAuthEmailLinkSignInEmail")
+        let savedUI_sid = UserDefaults.standard.string(forKey: "ui_sid")
+        print("\nsavedEmail: ", savedEmail)
+        print("\nsavedui_sid: ", savedUI_sid)
+        
+        let credential = EmailAuthProvider.credential(withEmail: savedEmail!, link: emailLink)
+
+        self.authUI.auth?.signIn(with: credential) { (authDataResult, error) in
+            
+            if let error = error {
+                print("\nerror: ", error)
+                DispatchQueue.main.async {
+                    self.authUI.invokeResultCallback(with: authDataResult, url: nil, error: error)
+                }
+            }
+            
+            if let authDataResult = authDataResult {
+                print("\nauthDataResult: ", authDataResult)
+                DispatchQueue.main.async {
+                    self.authUI.invokeResultCallback(with: authDataResult, url: nil, error: error)
+                }
+            }
+        }
+    }
+    
+//    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, url: URL?, error: Error?) {
+//        print("inside didSignInWith authDataResult")
+//    }
+    
 }
 

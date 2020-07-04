@@ -10,8 +10,10 @@ import SwiftUI
 
 struct CameraControlView: View {
     
+    @EnvironmentObject var userSettings: UserSettings
     @ObservedObject var cameraControlVM = CameraControlViewModel()
     lazy var cameraControl_Interactor = CameraControl_Interactor(cameraControlVM: cameraControlVM)
+    let authAPI = AuthenticationAPI()
     
     func mutableCameraControl_Interactor() -> CameraControl_Interactor {
         var mutableSelf = self
@@ -20,23 +22,45 @@ struct CameraControlView: View {
     
     var body: some View {
         
-        VStack {
-                        
-            if self.cameraControlVM.cameraUrl != nil {
-                VideoPlayerSwiftUIView(cameraUrl: self.cameraControlVM.cameraUrl)
-            }
+        NavigationView {
             
-            Spacer()
-            Button("Start Camera") {
-                self.mutableCameraControl_Interactor()
-                    .startRecording(networkingAPI: nil, completionHandler: nil)
-            }.padding()
-            Button("Stop Camera") {
-                self.mutableCameraControl_Interactor()
-                    .stopRecording(networkingAPI: nil, completionHandler: nil)
-            }.padding()
+            VStack {
+                            
+                if self.cameraControlVM.cameraUrl != nil {
+                    VideoPlayerSwiftUIView(cameraUrl: self.cameraControlVM.cameraUrl)
+                }
+                
+                Spacer()
+                Button("Start Camera") {
+                    self.mutableCameraControl_Interactor()
+                        .startRecording(networkingAPI: nil, completionHandler: nil)
+                }.padding()
+                Button("Stop Camera") {
+                    self.mutableCameraControl_Interactor()
+                        .stopRecording(networkingAPI: nil, completionHandler: nil)
+                }.padding()
+                Button("Add user info to database") {
+                    self.mutableCameraControl_Interactor()
+                        .addUserInfo()
+                }.padding()
+                Button("Send notification") {
+                    self.mutableCameraControl_Interactor()
+                        .sendNotification()
+                }.padding()
+            }
+            .navigationBarTitle("Camera Controls", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Logout") {
+
+                let logoutError = self.authAPI.logout()
+                if logoutError == nil {
+                    withAnimation(.linear(duration: 1.0)) {
+                        self.userSettings.isLoggedIn = false
+                    }
+                } else {
+                    // Display popup indicating logout unsuccessful
+                }
+            })
         }
-        .navigationBarTitle("Camera Control", displayMode: .inline)
     }
 }
 

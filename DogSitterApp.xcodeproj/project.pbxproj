@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D22AE8BFB032FAD72B3D59C /* Pods_DogSitterAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DDF4FDCA681C6AAA4DEAA0 /* Pods_DogSitterAppTests.framework */; };
 		991AB5DF246A5A7C004FE7FA /* CameraControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */; };
 		991AB5E1246A5D5B004FE7FA /* CameraModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5E0246A5D5B004FE7FA /* CameraModelTests.swift */; };
 		991AB5E6246BCD5E004FE7FA /* NetworkingTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5E5246BCD5E004FE7FA /* NetworkingTestHelpers.swift */; };
@@ -21,6 +22,7 @@
 		9921DF97245D551D0010F478 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF96245D551D0010F478 /* URLSessionMock.swift */; };
 		9921DF9F245FB8420010F478 /* DogSitterAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF9E245FB8420010F478 /* DogSitterAppUITests.swift */; };
 		9921DFA7245FC6900010F478 /* CameraControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DFA6245FC6900010F478 /* CameraControlView.swift */; };
+		99541B16247B1C8A00D0B701 /* RecordingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99541B15247B1C8A00D0B701 /* RecordingListView.swift */; };
 		99586C1024613B2B008D93E3 /* HttpServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C0F24613B2B008D93E3 /* HttpServiceTests.swift */; };
 		99586C1324614808008D93E3 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C1224614808008D93E3 /* HttpService.swift */; };
 		99586C15246322E9008D93E3 /* NetworkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C14246322E9008D93E3 /* NetworkingAPI.swift */; };
@@ -38,6 +40,14 @@
 		999B83452473B52600DAF25E /* DataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B83442473B52600DAF25E /* DataTaskMock.swift */; };
 		999B834724751B9E00DAF25E /* VideoPlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B834624751B9E00DAF25E /* VideoPlayerUIView.swift */; };
 		999B834924751E3800DAF25E /* VideoPlayerSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B834824751E3800DAF25E /* VideoPlayerSwiftUIView.swift */; };
+		99F25C6B24A49B9C00F0EF4D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F25C6A24A49B9C00F0EF4D /* UserSettings.swift */; };
+		99F25C6D24A6850300F0EF4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99F25C6C24A6850300F0EF4D /* GoogleService-Info.plist */; };
+		99F637DA248A2AFC007DEB55 /* VLCPlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F637D9248A2AFC007DEB55 /* VLCPlayerUIView.swift */; };
+		99F637DC248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F637DB248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift */; };
+		99F637E0249C94A7007DEB55 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F637DF249C94A7007DEB55 /* Authentication.swift */; };
+		99F637E3249DDC35007DEB55 /* FirebaseAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F637E2249DDC35007DEB55 /* FirebaseAuthController.swift */; };
+		D0415EDADB374D18EEDD0719 /* Pods_DogSitterApp_DogSitterAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5A8F6579925BBA436ED80B /* Pods_DogSitterApp_DogSitterAppUITests.framework */; };
+		F7DB944B4FADED35F24E4311 /* Pods_DogSitterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A44CD879743E4B259E2011 /* Pods_DogSitterApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +67,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		99BD0C3424AFF14F00E5F6BB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		00508CDC2BF69F8CEEEE91FC /* Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterApp-DogSitterAppNotificationServiceExtension/Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		0AF5E7F57A23861F26412F4B /* Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-DogSitterApp-DogSitterAppNotificationServiceExtension/Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		275973B5C4AA1FCA570DA05D /* Pods_DogSitterApp_DogSitterAppNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogSitterApp_DogSitterAppNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28C961E21DD914C43E17F884 /* Pods-DogSitterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp.debug.xcconfig"; sourceTree = "<group>"; };
+		32A44CD879743E4B259E2011 /* Pods_DogSitterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogSitterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		340AD0CB7CE5E303B5A9575E /* Pods-DogSitterAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterAppTests/Pods-DogSitterAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		36DDF4FDCA681C6AAA4DEAA0 /* Pods_DogSitterAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogSitterAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5950B95783A774559442A83F /* Pods-DogSitterApp-DogSitterAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp-DogSitterAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C61ED70E4BC3BA822463BE9 /* Pods-DogSitterAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterAppTests.release.xcconfig"; path = "Target Support Files/Pods-DogSitterAppTests/Pods-DogSitterAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		837E64252596F0626FB3FA28 /* Pods-DogSitterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp.release.xcconfig"; path = "Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp.release.xcconfig"; sourceTree = "<group>"; };
+		98ECB74CEC3E07F9C749ECDD /* Pods-DogSitterApp-DogSitterAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp-DogSitterAppUITests.release.xcconfig"; path = "Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlViewModel.swift; sourceTree = "<group>"; };
 		991AB5E0246A5D5B004FE7FA /* CameraModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTests.swift; sourceTree = "<group>"; };
 		991AB5E5246BCD5E004FE7FA /* NetworkingTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTestHelpers.swift; sourceTree = "<group>"; };
@@ -78,6 +112,7 @@
 		9921DF9E245FB8420010F478 /* DogSitterAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSitterAppUITests.swift; sourceTree = "<group>"; };
 		9921DFA0245FB8420010F478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9921DFA6245FC6900010F478 /* CameraControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlView.swift; sourceTree = "<group>"; };
+		99541B15247B1C8A00D0B701 /* RecordingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListView.swift; sourceTree = "<group>"; };
 		99586C0F24613B2B008D93E3 /* HttpServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpServiceTests.swift; sourceTree = "<group>"; };
 		99586C1224614808008D93E3 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		99586C14246322E9008D93E3 /* NetworkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAPI.swift; sourceTree = "<group>"; };
@@ -95,6 +130,14 @@
 		999B83442473B52600DAF25E /* DataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskMock.swift; sourceTree = "<group>"; };
 		999B834624751B9E00DAF25E /* VideoPlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerUIView.swift; sourceTree = "<group>"; };
 		999B834824751E3800DAF25E /* VideoPlayerSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerSwiftUIView.swift; sourceTree = "<group>"; };
+		99F25C6924A0814A00F0EF4D /* DogSitterApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogSitterApp.entitlements; sourceTree = "<group>"; };
+		99F25C6A24A49B9C00F0EF4D /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		99F25C6C24A6850300F0EF4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99F637D9248A2AFC007DEB55 /* VLCPlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLCPlayerUIView.swift; sourceTree = "<group>"; };
+		99F637DB248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLCPlayerSwiftUIView.swift; sourceTree = "<group>"; };
+		99F637DF249C94A7007DEB55 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		99F637E2249DDC35007DEB55 /* FirebaseAuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthController.swift; sourceTree = "<group>"; };
+		AF5A8F6579925BBA436ED80B /* Pods_DogSitterApp_DogSitterAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogSitterApp_DogSitterAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DB944B4FADED35F24E4311 /* Pods_DogSitterApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D22AE8BFB032FAD72B3D59C /* Pods_DogSitterAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,19 +161,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0415EDADB374D18EEDD0719 /* Pods_DogSitterApp_DogSitterAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30473EF6D04F7622D81138DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32A44CD879743E4B259E2011 /* Pods_DogSitterApp.framework */,
+				AF5A8F6579925BBA436ED80B /* Pods_DogSitterApp_DogSitterAppUITests.framework */,
+				36DDF4FDCA681C6AAA4DEAA0 /* Pods_DogSitterAppTests.framework */,
+				275973B5C4AA1FCA570DA05D /* Pods_DogSitterApp_DogSitterAppNotificationServiceExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		991AB5E4246B3C6B004FE7FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				99F637E1249D6237007DEB55 /* Authentication */,
 				9921DF75245D4E290010F478 /* LoginView.swift */,
 				9921DFA6245FC6900010F478 /* CameraControlView.swift */,
 				999B834624751B9E00DAF25E /* VideoPlayerUIView.swift */,
 				999B834824751E3800DAF25E /* VideoPlayerSwiftUIView.swift */,
+				99F637D9248A2AFC007DEB55 /* VLCPlayerUIView.swift */,
+				99F637DB248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift */,
+				99541B15247B1C8A00D0B701 /* RecordingListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +201,8 @@
 				9921DF8A245D4E720010F478 /* DogSitterAppTests */,
 				9921DF9D245FB8420010F478 /* DogSitterAppUITests */,
 				9921DF6F245D4E290010F478 /* Products */,
+				FC6F07EA3ECFE0B41CC32D6D /* Pods */,
+				30473EF6D04F7622D81138DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +219,7 @@
 		9921DF70245D4E290010F478 /* DogSitterApp */ = {
 			isa = PBXGroup;
 			children = (
+				99F25C6924A0814A00F0EF4D /* DogSitterApp.entitlements */,
 				991AB5E4246B3C6B004FE7FA /* Views */,
 				99586C182464A908008D93E3 /* View Models */,
 				999B834124739EC100DAF25E /* Interactors */,
@@ -166,6 +230,7 @@
 				9921DF77245D4E2B0010F478 /* Assets.xcassets */,
 				9921DF7C245D4E2B0010F478 /* LaunchScreen.storyboard */,
 				9921DF7F245D4E2B0010F478 /* Info.plist */,
+				99F25C6C24A6850300F0EF4D /* GoogleService-Info.plist */,
 				9921DF79245D4E2B0010F478 /* Preview Content */,
 			);
 			path = DogSitterApp;
@@ -198,6 +263,7 @@
 			children = (
 				9921DF94245D4F160010F478 /* User.swift */,
 				998039BD2478DDBF001B69B9 /* Video.swift */,
+				99F25C6A24A49B9C00F0EF4D /* UserSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +284,7 @@
 				99586C14246322E9008D93E3 /* NetworkingAPI.swift */,
 				997D937B246FCFE10030144B /* JsonStructs.swift */,
 				997D937D246FDCBC0030144B /* URLs.swift */,
+				99F637DF249C94A7007DEB55 /* Authentication.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -293,6 +360,29 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		99F637E1249D6237007DEB55 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				99F637E2249DDC35007DEB55 /* FirebaseAuthController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		FC6F07EA3ECFE0B41CC32D6D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28C961E21DD914C43E17F884 /* Pods-DogSitterApp.debug.xcconfig */,
+				837E64252596F0626FB3FA28 /* Pods-DogSitterApp.release.xcconfig */,
+				5950B95783A774559442A83F /* Pods-DogSitterApp-DogSitterAppUITests.debug.xcconfig */,
+				98ECB74CEC3E07F9C749ECDD /* Pods-DogSitterApp-DogSitterAppUITests.release.xcconfig */,
+				340AD0CB7CE5E303B5A9575E /* Pods-DogSitterAppTests.debug.xcconfig */,
+				6C61ED70E4BC3BA822463BE9 /* Pods-DogSitterAppTests.release.xcconfig */,
+				00508CDC2BF69F8CEEEE91FC /* Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.debug.xcconfig */,
+				0AF5E7F57A23861F26412F4B /* Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,9 +390,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9921DF82245D4E2B0010F478 /* Build configuration list for PBXNativeTarget "DogSitterApp" */;
 			buildPhases = (
+				14A1EF4509BD584ABA4CAFEE /* [CP] Check Pods Manifest.lock */,
 				9921DF6A245D4E290010F478 /* Sources */,
 				9921DF6B245D4E290010F478 /* Frameworks */,
 				9921DF6C245D4E290010F478 /* Resources */,
+				99BD0C3424AFF14F00E5F6BB /* Embed App Extensions */,
+				3FC15F7AAA21DEF4007214CE /* [CP] Embed Pods Frameworks */,
+				C9423FDD6FDC343724E6E204 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,6 +411,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9921DF90245D4E720010F478 /* Build configuration list for PBXNativeTarget "DogSitterAppTests" */;
 			buildPhases = (
+				508FAC167EB0914F9C69BFAF /* [CP] Check Pods Manifest.lock */,
 				9921DF85245D4E720010F478 /* Sources */,
 				9921DF86245D4E720010F478 /* Frameworks */,
 				9921DF87245D4E720010F478 /* Resources */,
@@ -335,9 +430,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9921DFA5245FB8420010F478 /* Build configuration list for PBXNativeTarget "DogSitterAppUITests" */;
 			buildPhases = (
+				2FC089C8E8CF519C15871808 /* [CP] Check Pods Manifest.lock */,
 				9921DF98245FB8420010F478 /* Sources */,
 				9921DF99245FB8420010F478 /* Frameworks */,
 				9921DF9A245FB8420010F478 /* Resources */,
+				9D0667B8C339ACFFD0CFAC0E /* [CP] Embed Pods Frameworks */,
+				72AA8D0DDF9FE4973E948E33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -355,7 +453,7 @@
 		9921DF66245D4E290010F478 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "PlayBow Neighbors";
 				TargetAttributes = {
@@ -398,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9921DF7E245D4E2B0010F478 /* LaunchScreen.storyboard in Resources */,
+				99F25C6D24A6850300F0EF4D /* GoogleService-Info.plist in Resources */,
 				9921DF7B245D4E2B0010F478 /* Preview Assets.xcassets in Resources */,
 				9921DF78245D4E2B0010F478 /* Assets.xcassets in Resources */,
 			);
@@ -419,6 +518,143 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14A1EF4509BD584ABA4CAFEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DogSitterApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FC089C8E8CF519C15871808 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DogSitterApp-DogSitterAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FC15F7AAA21DEF4007214CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		508FAC167EB0914F9C69BFAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DogSitterAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72AA8D0DDF9FE4973E948E33 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D0667B8C339ACFFD0CFAC0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9423FDD6FDC343724E6E204 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9921DF6A245D4E290010F478 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -427,20 +663,26 @@
 				999B834924751E3800DAF25E /* VideoPlayerSwiftUIView.swift in Sources */,
 				997D937E246FDCBC0030144B /* URLs.swift in Sources */,
 				99586C15246322E9008D93E3 /* NetworkingAPI.swift in Sources */,
+				99F637DA248A2AFC007DEB55 /* VLCPlayerUIView.swift in Sources */,
 				9921DF95245D4F160010F478 /* User.swift in Sources */,
 				99586C1324614808008D93E3 /* HttpService.swift in Sources */,
 				999B834324739EDD00DAF25E /* CameraControl_Interactor.swift in Sources */,
 				999B834724751B9E00DAF25E /* VideoPlayerUIView.swift in Sources */,
 				9921DF72245D4E290010F478 /* AppDelegate.swift in Sources */,
+				99F637DC248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift in Sources */,
 				991AB5DF246A5A7C004FE7FA /* CameraControlViewModel.swift in Sources */,
 				9921DF74245D4E290010F478 /* SceneDelegate.swift in Sources */,
+				99541B16247B1C8A00D0B701 /* RecordingListView.swift in Sources */,
 				9921DFA7245FC6900010F478 /* CameraControlView.swift in Sources */,
+				99F637E0249C94A7007DEB55 /* Authentication.swift in Sources */,
+				99F25C6B24A49B9C00F0EF4D /* UserSettings.swift in Sources */,
 				998039BE2478DDBF001B69B9 /* Video.swift in Sources */,
 				998039BA2478894A001B69B9 /* RecordingListViewModel.swift in Sources */,
 				998039BC24788A55001B69B9 /* RecordingListInteractor.swift in Sources */,
 				9921DF76245D4E290010F478 /* LoginView.swift in Sources */,
 				997D937C246FCFE10030144B /* JsonStructs.swift in Sources */,
 				99586C1A2464A92E008D93E3 /* LoginViewModel.swift in Sources */,
+				99F637E3249DDC35007DEB55 /* FirebaseAuthController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +742,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -560,6 +803,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -589,7 +833,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -612,13 +856,19 @@
 		};
 		9921DF83245D4E2B0010F478 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28C961E21DD914C43E17F884 /* Pods-DogSitterApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DogSitterApp/DogSitterApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DogSitterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = XBX5KWCG2W;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DogSitterApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -632,13 +882,19 @@
 		};
 		9921DF84245D4E2B0010F478 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 837E64252596F0626FB3FA28 /* Pods-DogSitterApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DogSitterApp/DogSitterApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DogSitterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = XBX5KWCG2W;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DogSitterApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,6 +908,7 @@
 		};
 		9921DF91245D4E720010F478 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 340AD0CB7CE5E303B5A9575E /* Pods-DogSitterAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -672,6 +929,7 @@
 		};
 		9921DF92245D4E720010F478 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C61ED70E4BC3BA822463BE9 /* Pods-DogSitterAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -692,6 +950,7 @@
 		};
 		9921DFA3245FB8420010F478 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5950B95783A774559442A83F /* Pods-DogSitterApp-DogSitterAppUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBX5KWCG2W;
@@ -711,6 +970,7 @@
 		};
 		9921DFA4245FB8420010F478 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98ECB74CEC3E07F9C749ECDD /* Pods-DogSitterApp-DogSitterAppUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBX5KWCG2W;

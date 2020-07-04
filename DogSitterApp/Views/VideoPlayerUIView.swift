@@ -15,12 +15,27 @@ class VideoPlayerUIView: UIView {
     
     convenience init(cameraUrl: URL?, frame: CGRect) {
         self.init(frame: frame)
+//        if let cameraUrl = cameraUrl {
+//            let player = AVPlayer(url: cameraUrl)
+//            player.play()
+//            self.playerLayer.player = player
+//            self.layer.addSublayer(self.playerLayer)
+//        }
+        
         if let cameraUrl = cameraUrl {
-            let player = AVPlayer(url: cameraUrl)
+            
+            print("cameraUrl inside PlayerView: ", cameraUrl)
+            let asset = AVURLAsset(url: cameraUrl)
+            
+//            let asset = AVAsset(url: cameraUrl)
+            
+            let playerItem = AVPlayerItem(asset: asset)
+            let player = AVPlayer(playerItem: playerItem)
             player.play()
             self.playerLayer.player = player
             self.layer.addSublayer(self.playerLayer)
         }
+        
     }
 
     override func layoutSubviews() {

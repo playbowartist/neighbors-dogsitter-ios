@@ -38,6 +38,16 @@
                ReferencedContainer = "container:DogSitterApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9921DF9B245FB8420010F478"
+               BuildableName = "DogSitterAppUITests.xctest"
+               BlueprintName = "DogSitterAppUITests"
+               ReferencedContainer = "container:DogSitterApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

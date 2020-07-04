@@ -12,12 +12,19 @@ struct LoginView: View {
     
     @State private var loginVM = LoginViewModel()
     @State private var completeLogin: Bool = false
+    
+    let recordingListVM = RecordingListViewModel()
         
     var body: some View {
         
         return NavigationView {
             VStack {
-                NavigationLink(destination: CameraControlView(), isActive: self.$completeLogin) { EmptyView() }
+                
+                NavigationLink(destination: FirebaseAuthView(), isActive: .constant(true)) {
+                    EmptyView()
+                }
+                
+                NavigationLink(destination: RecordingListView(recordingListVM: recordingListVM), isActive: self.$completeLogin) { EmptyView() }
                 
                 TextField("Email", text: $loginVM.email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -32,11 +39,22 @@ struct LoginView: View {
                 Button("Login") {
                     self.loginVM.login(networkingAPI: nil) {
                         if self.loginVM.user.auth_token != nil {
-                            self.completeLogin = true
+                            DispatchQueue.main.async {
+                                self.completeLogin = true
+                            }
                         }
                     }
-                    
                 }.padding()
+                
+                Button("Register") {
+                    self.loginVM.register {
+                        if self.loginVM.user.firebaseID != nil {
+                            DispatchQueue.main.async {
+                                self.completeLogin = true
+                            }
+                        }
+                    }
+                }
             }
         }
     }

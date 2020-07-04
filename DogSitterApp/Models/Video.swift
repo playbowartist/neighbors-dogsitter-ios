@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Video: Equatable {
+struct Video: Equatable, Identifiable {
+    var id = UUID()
     var url: URL
     var name: String?
     var startDate: Date?
