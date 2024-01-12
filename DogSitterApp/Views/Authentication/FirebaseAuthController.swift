@@ -9,8 +9,13 @@
 import UIKit
 import SwiftUI
 import Firebase
-import FirebaseUI
+import FirebaseAuthUI
 import FirebaseAuth
+//import FirebaseInstanceID
+//import FirebaseFirestoreSwift
+import FirebaseMessaging
+import FirebaseInstallations
+import FirebasePhoneAuthUI
 
 protocol AuthenticationProtocol {
     
@@ -40,10 +45,10 @@ class FirebaseAuthViewModel: ObservableObject {
 
 struct FirebaseAuthView: View {
     
-    @EnvironmentObject var userSettings: UserSettings
+    @EnvironmentObject var appState: AppState
     @ObservedObject var firebaseAuthViewModel: FirebaseAuthViewModel
     var firebaseAuthController: FirebaseAuthController!
-    
+
     init() {
         let tempVM = FirebaseAuthViewModel()
         self.firebaseAuthViewModel = tempVM
@@ -53,16 +58,10 @@ struct FirebaseAuthView: View {
     var body: some View {
         
         VStack {
-            if userSettings.isLoggedIn {
-                CameraControlView()
-            } else {
-                ZStack {
-                    firebaseAuthController
-                }
-                .background(Image("neighborhood"), alignment: .trailing)
-                .edgesIgnoringSafeArea(.all)
-            }
+            firebaseAuthController
         }
+        .background(Image("neighborhood"), alignment: .trailing)
+        .edgesIgnoringSafeArea(.all)
     }
     
     func handleOpen(url: URL, sourceApplication: String?) {
@@ -72,7 +71,7 @@ struct FirebaseAuthView: View {
 
 struct FirebaseAuthController: UIViewControllerRepresentable {
     
-    @EnvironmentObject var userSettings: UserSettings
+    @EnvironmentObject var appState: AppState
     var firebaseAuthViewModel: FirebaseAuthViewModel
     
     let authUI = FUIAuth.defaultAuthUI()!
@@ -82,30 +81,29 @@ struct FirebaseAuthController: UIViewControllerRepresentable {
     }
     
     func makeUIViewController(context: Context) -> UINavigationController {
-        print("\ninside makeUIViewController\n")
-//        FirebaseApp.configure()
         
-//        let authUI = FUIAuth.defaultAuthUI()!
+        print("\ninside makeUIViewController\n")
         authUI.delegate = context.coordinator
         
+        // Don't forget to set Associated Domains
         let actionCodeSettings = ActionCodeSettings()
-        actionCodeSettings.url = URL(string: "https://dogsitterapp.page.link/Tbeh")
+        actionCodeSettings.url = URL(string: "https://playbowdogs.page.link")
         
         actionCodeSettings.handleCodeInApp = true
         actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
-        actionCodeSettings.setAndroidPackageName("com.firebase.example", installIfNotAvailable: false, minimumVersion: "12")
+        actionCodeSettings.setAndroidPackageName("com.playbowdogs.neighbors.android", installIfNotAvailable: true, minimumVersion: "12")
         
-        
-        
+        let whiteListedCountries: Set = ["US"]
         let providers: [FUIAuthProvider] = [
-            FUIEmailAuth(authAuthUI: FUIAuth.defaultAuthUI()!,
-                         signInMethod: EmailLinkAuthSignInMethod,
-                         forceSameDevice: false,
-                         allowNewEmailAccounts: true,
-                         actionCodeSetting: actionCodeSettings),
-            FUIPhoneAuth(authUI: authUI),
-            FUIOAuth.microsoftAuthProvider(),
-            FUIGoogleAuth(),
+//            FUIEmailAuth(authAuthUI: FUIAuth.defaultAuthUI()!,
+//                         signInMethod: EmailLinkAuthSignInMethod,
+//                         forceSameDevice: false,
+//                         allowNewEmailAccounts: true,
+//                         actionCodeSetting: actionCodeSettings),
+            FUIPhoneAuth(authUI: authUI, whitelistedCountries: whiteListedCountries),
+//            FUIPhoneAuth(authUI: authUI),
+//            FUIOAuth.microsoftAuthProvider(),
+//            FUIGoogleAuth(),
         ]
         authUI.providers = providers
         authUI.shouldHideCancelButton = true
@@ -127,9 +125,6 @@ class FUICustomAuthPickerViewController: FUIAuthPickerViewController {
     // viewWillAppear works better than viewDidLoad for changing navigationBar components
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        self.view.addBackground(image: UIImage(named: "neighborhood")!)
-//        UIApplication.shared.statusBarUIView?.backgroundColor = UIColor.lightGray
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -154,57 +149,73 @@ class Coordinator: NSObject, FUIAuthDelegate {
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
-        print("\nFinished auth process -- returned user.email:", authDataResult?.user.email)
+        print("inside didSignInWith authDataResult")
+        self.parent.appState.userData = UserData()
         
-        if authDataResult != nil {
-            withAnimation(.linear(duration: 1.0)) {
-                self.parent.userSettings.isLoggedIn = true
+        // Retrieve fcm_token and save in userData
+        Messaging.messaging().token { (result, error) in
+            if let error = error {
+                print("\nError fetching fcmToken inside didSignInWith: \(error)\n")
+            }
+            else if let result = result {
+                print("FCM registration token: \(result)\n")
+                self.parent.appState.userData?.fcm_token = result
+            }
+        }
+        
+        guard let firebaseID = authDataResult?.user.uid else { return }
+        guard let phoneNumber = authDataResult?.user.phoneNumber else { return }
+        print("phoneNumber from Firebase auth:", phoneNumber)
+        print("\nFinished auth process -- returned user UID: \(firebaseID)")
+        
+        self.parent.appState.userData?.user_id = firebaseID
+        self.parent.appState.userData?.phone_number = phoneNumber
+        
+        // Check whether userType is stored in Firestore first
+        FirestoreAPI.getUserType(firebaseID: firebaseID) { (userData) in
+            // If no userType returned, then take to onboarding, else check for Profile
+            guard let userTypeData = userData,
+                let userType = userTypeData.userType,
+                let city = userTypeData.city else {
+                    print("\nUserType not found, so send to selectUserType / onboarding")
+                    self.parent.appState.loginDestination = .selectUserType
+                    return
+            }
+            
+            // Retrieve fcm_token and save in Firestore profile
+            Messaging.messaging().token { (result, error) in
+                guard let result = result else { return }
+                print("FCM registration token to save in Firestore profile: \(result)\n")
+                self.parent.appState.userData?.fcm_token = result
+                
+                // TODO: Check that saveFcmToken is successful before getProfile
+                FirestoreAPI.saveFcmToken(fcmToken: result, firebaseID: firebaseID, userType: userType, city: city) {
+                    
+                    FirestoreAPI.getProfile(firebaseID: firebaseID, userType: userType, city: city) { (userData) in
+                        guard var userData = userData else {
+                            print("\nProfile does not exist, so send to selectUserType / onboarding")
+                            self.parent.appState.loginDestination = .selectUserType
+                            return
+                        }
+                        
+                        userData.userType = userType
+                        userData.city = city
+                        userData.user_id = firebaseID
+                        userData.phone_number = phoneNumber
+                        self.parent.appState.userData = userData
+                        
+                        // Check completed_onboarding flag is true
+                        if let completedOnboarding = userData.completed_onboarding,
+                            completedOnboarding == true {
+                            self.parent.appState.loginDestination = .mainTabView
+                        } else {
+                            print("\nUser document exists, but onboarding not complete, so send user to selectUserType / complete onboarding")
+                            self.parent.appState.loginDestination = .selectUserType
+                        }
+                    }
+                }
             }
         }
     }
 }
-
-extension UIView {
-    func addBackground(image: UIImage) {
-        let width = UIScreen.main.bounds.size.width
-        let height = UIScreen.main.bounds.size.height
-        
-        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        imageViewBackground.image = image
-        imageViewBackground.contentMode = UIView.ContentMode.left
-        
-        self.addSubview(imageViewBackground)
-        self.sendSubviewToBack(imageViewBackground)
-    }
-}
-
-// Allows accessing top status bar to change its background color
-//extension UIApplication {
-//    var statusBarUIView: UIView? {
-//        
-//        if #available(iOS 13.0, *) {
-//            let tag = 3848245
-//            
-//            let keyWindow = UIApplication.shared.connectedScenes
-//                .map({$0 as? UIWindowScene})
-//                .compactMap({$0})
-//                .first?.windows.first
-//            
-//            if let statusBar = keyWindow?.viewWithTag(tag) {
-//                return statusBar
-//            } else {
-//                let height = keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? .zero
-//                let statusBarView = UIView(frame: height)
-//                statusBarView.tag = tag
-//                statusBarView.layer.zPosition = 999999
-//                
-//                keyWindow?.addSubview(statusBarView)
-//                return statusBarView
-//            }
-//            
-//        }
-//        return nil
-//    }
-//}
-
 

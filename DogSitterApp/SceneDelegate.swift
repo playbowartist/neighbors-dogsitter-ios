@@ -8,32 +8,70 @@
 
 import UIKit
 import SwiftUI
-import FirebaseUI
+import FirebaseAuthUI
 import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, FUIAuthDelegate {
 
     var window: UIWindow?
-    var userSettings = UserSettings()
     let authUI = FUIAuth.defaultAuthUI()!
-
+    
+    var appState: AppState = AppState()
+    var recordingListVM = RecordingListViewModel()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        // If appState already set by AppDelegate via incoming notification, then assign to SceneDelegate
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            self.appState = appDelegate.appState
+        }
+        
+        if let currentUser = Auth.auth().currentUser {
+            // TODO: Check that db profile exists AND completed_onboarding flag is true
+            // Write db code in new FirestoreAPI file, like getProfile, depending on client or dogsitter
+            
+            let firebaseID = currentUser.uid
+            
+            FirestoreAPI.getUserType(firebaseID: firebaseID) { (userData) in
+                guard let userTypeData = userData,
+                    let userType = userTypeData.userType,
+                    let city = userTypeData.city else { return }
+                
+                // TODO: Move the userData assignments into FirestoreAPI.getProfile, to remove 4 lines from below
+                FirestoreAPI.getProfile(firebaseID: firebaseID, userType: userType, city: city) { (userData) in
+                    guard var userData = userData else { return }
+                    
+                    userData.userType = userType
+                    userData.city = city
+                    userData.user_id = firebaseID
+                    userData.phone_number = currentUser.phoneNumber
+                    self.appState.userData = userData
+                    
+                    if let completedOnboarding = userData.completed_onboarding,
+                        completedOnboarding == true {
+                        DispatchQueue.main.async {
+                            self.appState.loginDestination = .mainTabView
+                        }
+                    }
+                }
+            }
+        }
 
-        // Create the SwiftUI view that provides the window contents.
-//        let loginView = LoginView()
-        
-        
-//        // Use a UIHostingController as window root view controller.
+        // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: FirebaseAuthView().environmentObject(userSettings))
+            window.rootViewController = UIHostingController(rootView: RootView(recordingListVM: self.recordingListVM).environmentObject(self.appState))
             self.window = window
             window.makeKeyAndVisible()
+        }
+        
+        // Storing firebaseUser in appState
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.appState.firebaseUser = user
         }
     }
 
@@ -63,6 +101,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, FUIAuthDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        
+//        print("SceneDidEnterBackground -- about to schedule background task")
+        // Schedule a new refresh task
+//        (UIApplication.shared.delegate as! AppDelegate).scheduleBackgroundFetch()
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -92,10 +134,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, FUIAuthDelegate {
         print("cleanUrl inside continue userActivity: ", cleanUrl)
         
         myhandleOpenUrl(url: cleanUrl, sourceApplication: Bundle.main.bundleIdentifier)
-        
-//        self.firebaseAuthView.handleOpen(url: cleanUrl, sourceApplication: Bundle.main.bundleIdentifier)
-        
-//        FUIAuth.defaultAuthUI()?.handleOpen(cleanUrl, sourceApplication: Bundle.main.bundleIdentifier)
     }
     
     func myhandleOpenUrl(url: URL, sourceApplication: String?) {
@@ -106,13 +144,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, FUIAuthDelegate {
         var continueUrlString: String?
         
         for queryItem in urlComponents.queryItems! {
-            
-    //        print("queryItem: ", queryItem)
-//            print("queryItem.name: ", queryItem.name)
-            
             if queryItem.name == "continueUrl" {
                 continueUrlString = queryItem.value
-//                print("continueUrlString: ", continueUrlString)
             }
         }
         print("\nfinal continueUrl: ", continueUrlString)
@@ -149,10 +182,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, FUIAuthDelegate {
             }
         }
     }
-    
-//    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, url: URL?, error: Error?) {
-//        print("inside didSignInWith authDataResult")
-//    }
     
 }
 

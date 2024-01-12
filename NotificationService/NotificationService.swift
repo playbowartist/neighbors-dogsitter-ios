@@ -15,7 +15,8 @@ class NotificationService: UNNotificationServiceExtension, MessagingDelegate {
     var bestAttemptContent: UNMutableNotificationContent?
     
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
-//        print("\ninside didReceive")
+//        Messaging.messaging().delegate = self
+        print("\ninside didReceive inside NotificationService")
 //        InstanceID.instanceID().instanceID { (result, error) in
 //            print("inside InstanceID")
 //            
@@ -25,15 +26,13 @@ class NotificationService: UNNotificationServiceExtension, MessagingDelegate {
 //                print("\nRemote instance ID token: \(result)")
 //            }
 //        }
-        
-        Messaging.messaging().delegate = self
-        
+
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
         if let bestAttemptContent = bestAttemptContent {
             // Modify the notification content here...
-            bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
+            bestAttemptContent.title = "\(bestAttemptContent.title)"
             
             FIRMessagingExtensionHelper().populateNotificationContent(bestAttemptContent, withContentHandler: contentHandler)
         }
@@ -47,13 +46,14 @@ class NotificationService: UNNotificationServiceExtension, MessagingDelegate {
         }
     }
     
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Successfully registered for Firebase notifications!")
-        print("FCM registration token:", fcmToken)
-
-        let dataDict: [String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-    }
+//    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+//        print("Successfully registered for Firebase notifications!")
+//        print("\nFCM registration token inside NotificationService:", fcmToken)
+//
+//        let dataDict: [String: String] = ["token": fcmToken]
+//        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+//        // TODO: If necessary send token to application server.
+//        // Note: This callback is fired at each app startup and whenever a new token is generated.
+//    }
 }
+

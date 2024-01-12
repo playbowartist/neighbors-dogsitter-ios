@@ -32,7 +32,7 @@ class HttpService {
         
         session.dataTask(with: urlRequest) { (data, response, error) in
             let STATUS_CODE_200 = 200
-            
+            let testResponse = response as? HTTPURLResponse
             // Check that data is available
             // Check that HttpResponse's status code = 200
             guard let data = data,

@@ -43,4 +43,27 @@ struct GetRecordingListResults: Decodable {
     var end: String?
 }
 
+struct GetRecordedClipResponse: Decodable {
+    var download_url: String?
+}
 
+// getAcuityAppointments
+struct Appointment: Decodable {
+    var email: String
+    var date: String        // Human readable "July 2, 2013"
+    var datetime: String    // ISO format "2013-07-02T10:15:00-0700"
+    var calendarID: Int
+}
+
+struct AcuityClient: Decodable {
+    var firstName: String
+    var lastName: String
+    var email: String
+    var phone: String
+}
+
+struct AcuityCalendar: Decodable {
+    var id: Int
+    var name: String
+    var email: String
+}

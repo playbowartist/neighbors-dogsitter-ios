@@ -3,34 +3,46 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13A61F7F3B1447118B7DFFD9 /* libPods-App-DogSitterAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4710DF0B6D6B84B76DE040B /* libPods-App-DogSitterAppUITests.a */; };
-		2489B0A7D14354A1CFB986EE /* Pods_App_DogSitterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE337E7F797CD8FEE909A23 /* Pods_App_DogSitterApp.framework */; };
-		6608DC1728575B2BC735E299 /* libPods-DogSitterAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BABB7BA0A902E41E8E610AF9 /* libPods-DogSitterAppTests.a */; };
-		991AB5DF246A5A7C004FE7FA /* CameraControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */; };
+		487EE9218D0F1DF4D5C1D8F5 /* Pods_DogSitterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0940451C7057BB79198E465B /* Pods_DogSitterApp.framework */; };
+		787F3AC77980CFB5F41B5701 /* libPods-DogSitterAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8213243CEB9B283E86F65FA4 /* libPods-DogSitterAppUITests.a */; };
+		99027761250AB43F003FBA24 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99027760250AB43F003FBA24 /* CalendarViewModel.swift */; };
+		99027766250DDE3D003FBA24 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99027765250DDE3D003FBA24 /* DateExtensions.swift */; };
+		9902776925101A30003FBA24 /* DayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902776825101A30003FBA24 /* DayLabel.swift */; };
+		991AB5DF246A5A7C004FE7FA /* DogSitterLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5DE246A5A7C004FE7FA /* DogSitterLiveViewModel.swift */; };
 		991AB5E1246A5D5B004FE7FA /* CameraModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5E0246A5D5B004FE7FA /* CameraModelTests.swift */; };
 		991AB5E6246BCD5E004FE7FA /* NetworkingTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AB5E5246BCD5E004FE7FA /* NetworkingTestHelpers.swift */; };
 		9921DF72245D4E290010F478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF71245D4E290010F478 /* AppDelegate.swift */; };
 		9921DF74245D4E290010F478 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF73245D4E290010F478 /* SceneDelegate.swift */; };
-		9921DF76245D4E290010F478 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF75245D4E290010F478 /* LoginView.swift */; };
 		9921DF78245D4E2B0010F478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9921DF77245D4E2B0010F478 /* Assets.xcassets */; };
 		9921DF7B245D4E2B0010F478 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9921DF7A245D4E2B0010F478 /* Preview Assets.xcassets */; };
 		9921DF7E245D4E2B0010F478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9921DF7C245D4E2B0010F478 /* LaunchScreen.storyboard */; };
 		9921DF8C245D4E720010F478 /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF8B245D4E720010F478 /* UserModelTests.swift */; };
-		9921DF95245D4F160010F478 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF94245D4F160010F478 /* User.swift */; };
+		9921DF95245D4F160010F478 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF94245D4F160010F478 /* UserData.swift */; };
 		9921DF97245D551D0010F478 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF96245D551D0010F478 /* URLSessionMock.swift */; };
 		9921DF9F245FB8420010F478 /* DogSitterAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DF9E245FB8420010F478 /* DogSitterAppUITests.swift */; };
-		9921DFA7245FC6900010F478 /* CameraControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DFA6245FC6900010F478 /* CameraControlView.swift */; };
+		9921DFA7245FC6900010F478 /* DogSitterLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921DFA6245FC6900010F478 /* DogSitterLiveView.swift */; };
+		993FE33B25081A85008C1A9B /* CalendarSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993FE33A25081A85008C1A9B /* CalendarSwiftUIView.swift */; };
 		99541B16247B1C8A00D0B701 /* RecordingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99541B15247B1C8A00D0B701 /* RecordingListView.swift */; };
 		99586C1024613B2B008D93E3 /* HttpServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C0F24613B2B008D93E3 /* HttpServiceTests.swift */; };
 		99586C1324614808008D93E3 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C1224614808008D93E3 /* HttpService.swift */; };
 		99586C15246322E9008D93E3 /* NetworkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C14246322E9008D93E3 /* NetworkingAPI.swift */; };
 		99586C172463646C008D93E3 /* NetworkingAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C162463646C008D93E3 /* NetworkingAPITests.swift */; };
-		99586C1A2464A92E008D93E3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C192464A92E008D93E3 /* LoginViewModel.swift */; };
 		99586C1C2464B4E5008D93E3 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */; };
+		996ACD062546367B000B48CA /* ActivityIndicatorSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996ACD052546367B000B48CA /* ActivityIndicatorSwiftUIView.swift */; };
+		996ACD0A25467BBC000B48CA /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996ACD0925467BBC000B48CA /* ImageLoader.swift */; };
+		996ACD0C25467CA2000B48CA /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996ACD0B25467CA2000B48CA /* AsyncImage.swift */; };
+		996ACD0F254EB6D0000B48CA /* HiddenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996ACD0E254EB6D0000B48CA /* HiddenText.swift */; };
+		996ACD11254EBCE3000B48CA /* SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996ACD10254EBCE3000B48CA /* SystemImage.swift */; };
+		996B22462578D093006AE590 /* CloudFunctionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B22452578D093006AE590 /* CloudFunctionsAPI.swift */; };
+		997117B9255A1A8700EAECE7 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997117B8255A1A8700EAECE7 /* VideoPlayerViewController.swift */; };
+		997117BF255A668600EAECE7 /* FullscreenVideoSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997117BE255A668600EAECE7 /* FullscreenVideoSwiftUIView.swift */; };
+		997118352564B87B00EAECE7 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997118342564B87B00EAECE7 /* Calculations.swift */; };
+		9971184A256D873000EAECE7 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99711849256D873000EAECE7 /* ViewModelFactory.swift */; };
+		997B871A2530FD76003466A8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B87192530FD76003466A8 /* Strings.swift */; };
 		997D937C246FCFE10030144B /* JsonStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D937B246FCFE10030144B /* JsonStructs.swift */; };
 		997D937E246FDCBC0030144B /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D937D246FDCBC0030144B /* URLs.swift */; };
 		998039B82478883A001B69B9 /* RecordingListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998039B72478883A001B69B9 /* RecordingListInteractorTests.swift */; };
@@ -42,15 +54,58 @@
 		999B83452473B52600DAF25E /* DataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B83442473B52600DAF25E /* DataTaskMock.swift */; };
 		999B834724751B9E00DAF25E /* VideoPlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B834624751B9E00DAF25E /* VideoPlayerUIView.swift */; };
 		999B834924751E3800DAF25E /* VideoPlayerSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B834824751E3800DAF25E /* VideoPlayerSwiftUIView.swift */; };
+		99ACE2AD2B391239005FD4D6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 99ACE2AC2B391239005FD4D6 /* FirebaseAnalytics */; };
+		99ACE2AF2B391239005FD4D6 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99ACE2AE2B391239005FD4D6 /* FirebaseAnalyticsSwift */; };
+		99ACE2B12B391239005FD4D6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 99ACE2B02B391239005FD4D6 /* FirebaseAuth */; };
+		99ACE2B32B391239005FD4D6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 99ACE2B22B391239005FD4D6 /* FirebaseFirestore */; };
+		99ACE2B52B391239005FD4D6 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 99ACE2B42B391239005FD4D6 /* FirebaseFunctions */; };
+		99ACE2B72B391239005FD4D6 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 99ACE2B62B391239005FD4D6 /* FirebaseMessaging */; };
+		99ACE2B92B391239005FD4D6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 99ACE2B82B391239005FD4D6 /* FirebaseStorage */; };
+		99B437BE24BFF22A0096662F /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B437BD24BFF22A0096662F /* KeyboardAdaptive.swift */; };
 		99BD0C3F24B0402100E5F6BB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD0C3E24B0402100E5F6BB /* NotificationService.swift */; };
 		99BD0C4324B0402100E5F6BB /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 99BD0C3C24B0402100E5F6BB /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		99F25C6B24A49B9C00F0EF4D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F25C6A24A49B9C00F0EF4D /* UserSettings.swift */; };
+		99BD0C4824B1C96E00E5F6BB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD0C4724B1C96E00E5F6BB /* RootView.swift */; };
+		99BD0C4A24BE774E00E5F6BB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD0C4924BE774D00E5F6BB /* OnboardingView.swift */; };
+		99BD0C4C24BEB91000E5F6BB /* LabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD0C4B24BEB91000E5F6BB /* LabelTextField.swift */; };
+		99D37396253557E500704820 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D37395253557E500704820 /* SettingsView.swift */; };
+		99D373982537AACA00704820 /* CustomerLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D373972537AACA00704820 /* CustomerLiveView.swift */; };
+		99D871AA253963A30008B5FF /* CustomerLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D871A9253963A30008B5FF /* CustomerLiveViewModel.swift */; };
+		99D8FF9C2B3CE87500C29B79 /* ReserveDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8FF9B2B3CE87500C29B79 /* ReserveDatesView.swift */; };
+		99E181F524F8D5C70023416D /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E181F424F8D5C70023416D /* Appointment.swift */; };
+		99E181F72502F6550023416D /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E181F62502F6550023416D /* FirestoreManager.swift */; };
+		99E4B46B2B3AAE9E00041DDE /* SelectUserTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4B46A2B3AAE9E00041DDE /* SelectUserTypeView.swift */; };
+		99ECA30E251942AF00E6481A /* MonthHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA30D251942AF00E6481A /* MonthHeaderLabel.swift */; };
+		99ECA31025194D9F00E6481A /* OverallCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA30F25194D9F00E6481A /* OverallCalendarView.swift */; };
+		99ECA312251B2DD800E6481A /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA311251B2DD800E6481A /* UIViewExtensions.swift */; };
+		99ECA314251C89B500E6481A /* FirestoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA313251C89B500E6481A /* FirestoreAPI.swift */; };
+		99ECA316251DDED100E6481A /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA315251DDED100E6481A /* InputValidation.swift */; };
+		99ECA3182521A42400E6481A /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA3172521A42400E6481A /* OnboardingViewModel.swift */; };
+		99ECA31A2522BCC800E6481A /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA3192522BCC800E6481A /* UserCardView.swift */; };
+		99ECA31E25232A6100E6481A /* CustomCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA31D25232A6100E6481A /* CustomCheckmarkView.swift */; };
+		99ECA3232527C54F00E6481A /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA3222527C54F00E6481A /* ColorManager.swift */; };
+		99ECA3252527CDC700E6481A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99ECA3242527CDC700E6481A /* Colors.xcassets */; };
+		99ECA327252D22D300E6481A /* SelectUserTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECA326252D22D300E6481A /* SelectUserTypeViewModel.swift */; };
+		99EDB2BE24EC7F6C009E1AEE /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDB2BD24EC7F6C009E1AEE /* HomeTabView.swift */; };
+		99EDB2C024EC9B5C009E1AEE /* LiveVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDB2BF24EC9B5C009E1AEE /* LiveVideoView.swift */; };
+		99F25C6B24A49B9C00F0EF4D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F25C6A24A49B9C00F0EF4D /* AppState.swift */; };
 		99F25C6D24A6850300F0EF4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99F25C6C24A6850300F0EF4D /* GoogleService-Info.plist */; };
 		99F637DA248A2AFC007DEB55 /* VLCPlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F637D9248A2AFC007DEB55 /* VLCPlayerUIView.swift */; };
 		99F637DC248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F637DB248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift */; };
 		99F637E0249C94A7007DEB55 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F637DF249C94A7007DEB55 /* Authentication.swift */; };
 		99F637E3249DDC35007DEB55 /* FirebaseAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F637E2249DDC35007DEB55 /* FirebaseAuthController.swift */; };
-		E6D0589E23D48B28586849F0 /* Pods_App_NotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDC5C283058DFD87E3F9B42 /* Pods_App_NotificationService.framework */; };
+		99F6DE3B2B39145800B48E50 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE3A2B39145800B48E50 /* FirebaseMessaging */; };
+		99F6DE3E2B391AAE00B48E50 /* FirebaseAnonymousAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE3D2B391AAE00B48E50 /* FirebaseAnonymousAuthUI */; };
+		99F6DE402B391AAE00B48E50 /* FirebaseAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE3F2B391AAE00B48E50 /* FirebaseAuthUI */; };
+		99F6DE422B391AAE00B48E50 /* FirebaseDatabaseUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE412B391AAE00B48E50 /* FirebaseDatabaseUI */; };
+		99F6DE442B391AAE00B48E50 /* FirebaseEmailAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE432B391AAE00B48E50 /* FirebaseEmailAuthUI */; };
+		99F6DE462B391AAE00B48E50 /* FirebaseFacebookAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE452B391AAE00B48E50 /* FirebaseFacebookAuthUI */; };
+		99F6DE482B391AAE00B48E50 /* FirebaseFirestoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE472B391AAE00B48E50 /* FirebaseFirestoreUI */; };
+		99F6DE4A2B391AAE00B48E50 /* FirebaseGoogleAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE492B391AAE00B48E50 /* FirebaseGoogleAuthUI */; };
+		99F6DE4C2B391AAE00B48E50 /* FirebaseOAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE4B2B391AAE00B48E50 /* FirebaseOAuthUI */; };
+		99F6DE4E2B391AAE00B48E50 /* FirebasePhoneAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE4D2B391AAE00B48E50 /* FirebasePhoneAuthUI */; };
+		99F6DE502B391AAE00B48E50 /* FirebaseStorageUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99F6DE4F2B391AAE00B48E50 /* FirebaseStorageUI */; };
+		9B10F3E084F061D3FC3C7535 /* libPods-DogSitterAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C3154535A88A66B2552B5F /* libPods-DogSitterAppTests.a */; };
+		E6B7A5BD4FC650A3EE70E2CC /* Pods_NotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6666F6E445BF9482BFB2FCD7 /* Pods_NotificationService.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,27 +147,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		00508CDC2BF69F8CEEEE91FC /* Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterApp-DogSitterAppNotificationServiceExtension/Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		0AF5E7F57A23861F26412F4B /* Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-DogSitterApp-DogSitterAppNotificationServiceExtension/Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
-		15A836300DE6420D47D38163 /* Pods-App-DogSitterAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-DogSitterAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-App-DogSitterAppUITests/Pods-App-DogSitterAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1B3327DFE1491AD141557CD3 /* Pods-App-DogSitterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-DogSitterApp.release.xcconfig"; path = "Target Support Files/Pods-App-DogSitterApp/Pods-App-DogSitterApp.release.xcconfig"; sourceTree = "<group>"; };
-		275973B5C4AA1FCA570DA05D /* Pods_DogSitterApp_DogSitterAppNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogSitterApp_DogSitterAppNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		28C961E21DD914C43E17F884 /* Pods-DogSitterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp.debug.xcconfig"; sourceTree = "<group>"; };
-		2BDC5C283058DFD87E3F9B42 /* Pods_App_NotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_NotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		340AD0CB7CE5E303B5A9575E /* Pods-DogSitterAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterAppTests/Pods-DogSitterAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		466AF98F5800576E1B8DB1ED /* Pods-App-DogSitterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-DogSitterApp.debug.xcconfig"; path = "Target Support Files/Pods-App-DogSitterApp/Pods-App-DogSitterApp.debug.xcconfig"; sourceTree = "<group>"; };
-		51676583E1F35F2DD39E76B9 /* Pods-App-NotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-NotificationService.debug.xcconfig"; path = "Target Support Files/Pods-App-NotificationService/Pods-App-NotificationService.debug.xcconfig"; sourceTree = "<group>"; };
-		5950B95783A774559442A83F /* Pods-DogSitterApp-DogSitterAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp-DogSitterAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6C61ED70E4BC3BA822463BE9 /* Pods-DogSitterAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterAppTests.release.xcconfig"; path = "Target Support Files/Pods-DogSitterAppTests/Pods-DogSitterAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		837E64252596F0626FB3FA28 /* Pods-DogSitterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp.release.xcconfig"; path = "Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp.release.xcconfig"; sourceTree = "<group>"; };
-		98ECB74CEC3E07F9C749ECDD /* Pods-DogSitterApp-DogSitterAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp-DogSitterAppUITests.release.xcconfig"; path = "Target Support Files/Pods-DogSitterApp-DogSitterAppUITests/Pods-DogSitterApp-DogSitterAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlViewModel.swift; sourceTree = "<group>"; };
+		0940451C7057BB79198E465B /* Pods_DogSitterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogSitterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E5756D7A6EB0FF9D591084A /* Pods-NotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.debug.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.debug.xcconfig"; sourceTree = "<group>"; };
+		4191A273BB2DBB86F38A7D3D /* Pods-NotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.release.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.release.xcconfig"; sourceTree = "<group>"; };
+		44D5339152721C595C4AB72C /* Pods-DogSitterAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterAppUITests.release.xcconfig"; path = "Target Support Files/Pods-DogSitterAppUITests/Pods-DogSitterAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6666F6E445BF9482BFB2FCD7 /* Pods_NotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69C3154535A88A66B2552B5F /* libPods-DogSitterAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DogSitterAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C54D4A29F38DA077FBD938 /* Pods-DogSitterAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterAppUITests/Pods-DogSitterAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7AB84FAFEBD3955B7081ED73 /* Pods-DogSitterAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterAppTests/Pods-DogSitterAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8213243CEB9B283E86F65FA4 /* libPods-DogSitterAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DogSitterAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99027760250AB43F003FBA24 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		99027765250DDE3D003FBA24 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		9902776825101A30003FBA24 /* DayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLabel.swift; sourceTree = "<group>"; };
+		991AB5DE246A5A7C004FE7FA /* DogSitterLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSitterLiveViewModel.swift; sourceTree = "<group>"; };
 		991AB5E0246A5D5B004FE7FA /* CameraModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTests.swift; sourceTree = "<group>"; };
 		991AB5E5246BCD5E004FE7FA /* NetworkingTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTestHelpers.swift; sourceTree = "<group>"; };
 		9921DF6E245D4E290010F478 /* DogSitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogSitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9921DF71245D4E290010F478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9921DF73245D4E290010F478 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9921DF75245D4E290010F478 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9921DF77245D4E2B0010F478 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9921DF7A245D4E2B0010F478 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9921DF7D245D4E2B0010F478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,19 +172,30 @@
 		9921DF89245D4E720010F478 /* DogSitterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogSitterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9921DF8B245D4E720010F478 /* UserModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
 		9921DF8D245D4E720010F478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9921DF94245D4F160010F478 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9921DF94245D4F160010F478 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		9921DF96245D551D0010F478 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		9921DF9C245FB8420010F478 /* DogSitterAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogSitterAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9921DF9E245FB8420010F478 /* DogSitterAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSitterAppUITests.swift; sourceTree = "<group>"; };
 		9921DFA0245FB8420010F478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9921DFA6245FC6900010F478 /* CameraControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlView.swift; sourceTree = "<group>"; };
+		9921DFA6245FC6900010F478 /* DogSitterLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSitterLiveView.swift; sourceTree = "<group>"; };
+		993FE33A25081A85008C1A9B /* CalendarSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSwiftUIView.swift; sourceTree = "<group>"; };
 		99541B15247B1C8A00D0B701 /* RecordingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListView.swift; sourceTree = "<group>"; };
 		99586C0F24613B2B008D93E3 /* HttpServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpServiceTests.swift; sourceTree = "<group>"; };
 		99586C1224614808008D93E3 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		99586C14246322E9008D93E3 /* NetworkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAPI.swift; sourceTree = "<group>"; };
 		99586C162463646C008D93E3 /* NetworkingAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAPITests.swift; sourceTree = "<group>"; };
-		99586C192464A92E008D93E3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		99586C1B2464B4E4008D93E3 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		996ACD052546367B000B48CA /* ActivityIndicatorSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorSwiftUIView.swift; sourceTree = "<group>"; };
+		996ACD0925467BBC000B48CA /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		996ACD0B25467CA2000B48CA /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		996ACD0E254EB6D0000B48CA /* HiddenText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenText.swift; sourceTree = "<group>"; };
+		996ACD10254EBCE3000B48CA /* SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImage.swift; sourceTree = "<group>"; };
+		996B22452578D093006AE590 /* CloudFunctionsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFunctionsAPI.swift; sourceTree = "<group>"; };
+		997117B8255A1A8700EAECE7 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		997117BE255A668600EAECE7 /* FullscreenVideoSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenVideoSwiftUIView.swift; sourceTree = "<group>"; };
+		997118342564B87B00EAECE7 /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
+		99711849256D873000EAECE7 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		997B87192530FD76003466A8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		997D937B246FCFE10030144B /* JsonStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonStructs.swift; sourceTree = "<group>"; };
 		997D937D246FDCBC0030144B /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		998039B72478883A001B69B9 /* RecordingListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListInteractorTests.swift; sourceTree = "<group>"; };
@@ -144,21 +207,43 @@
 		999B83442473B52600DAF25E /* DataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskMock.swift; sourceTree = "<group>"; };
 		999B834624751B9E00DAF25E /* VideoPlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerUIView.swift; sourceTree = "<group>"; };
 		999B834824751E3800DAF25E /* VideoPlayerSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerSwiftUIView.swift; sourceTree = "<group>"; };
+		99B437BD24BFF22A0096662F /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
 		99BD0C3C24B0402100E5F6BB /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BD0C3E24B0402100E5F6BB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		99BD0C4024B0402100E5F6BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99BD0C4724B1C96E00E5F6BB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		99BD0C4924BE774D00E5F6BB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		99BD0C4B24BEB91000E5F6BB /* LabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextField.swift; sourceTree = "<group>"; };
+		99D37395253557E500704820 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		99D373972537AACA00704820 /* CustomerLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerLiveView.swift; sourceTree = "<group>"; };
+		99D871A9253963A30008B5FF /* CustomerLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerLiveViewModel.swift; sourceTree = "<group>"; };
+		99D8FF9B2B3CE87500C29B79 /* ReserveDatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveDatesView.swift; sourceTree = "<group>"; };
+		99E181F424F8D5C70023416D /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		99E181F62502F6550023416D /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		99E4B46A2B3AAE9E00041DDE /* SelectUserTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTypeView.swift; sourceTree = "<group>"; };
+		99ECA30D251942AF00E6481A /* MonthHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderLabel.swift; sourceTree = "<group>"; };
+		99ECA30F25194D9F00E6481A /* OverallCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallCalendarView.swift; sourceTree = "<group>"; };
+		99ECA311251B2DD800E6481A /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		99ECA313251C89B500E6481A /* FirestoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAPI.swift; sourceTree = "<group>"; };
+		99ECA315251DDED100E6481A /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
+		99ECA3172521A42400E6481A /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		99ECA3192522BCC800E6481A /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
+		99ECA31D25232A6100E6481A /* CustomCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckmarkView.swift; sourceTree = "<group>"; };
+		99ECA3222527C54F00E6481A /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		99ECA3242527CDC700E6481A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		99ECA326252D22D300E6481A /* SelectUserTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTypeViewModel.swift; sourceTree = "<group>"; };
+		99EDB2BD24EC7F6C009E1AEE /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		99EDB2BF24EC9B5C009E1AEE /* LiveVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVideoView.swift; sourceTree = "<group>"; };
 		99F25C6924A0814A00F0EF4D /* DogSitterApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogSitterApp.entitlements; sourceTree = "<group>"; };
-		99F25C6A24A49B9C00F0EF4D /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		99F25C6A24A49B9C00F0EF4D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		99F25C6C24A6850300F0EF4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99F637D9248A2AFC007DEB55 /* VLCPlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLCPlayerUIView.swift; sourceTree = "<group>"; };
 		99F637DB248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLCPlayerSwiftUIView.swift; sourceTree = "<group>"; };
 		99F637DF249C94A7007DEB55 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		99F637E2249DDC35007DEB55 /* FirebaseAuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthController.swift; sourceTree = "<group>"; };
-		A35366BB232FA2DC9583354C /* Pods-App-DogSitterAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-DogSitterAppUITests.release.xcconfig"; path = "Target Support Files/Pods-App-DogSitterAppUITests/Pods-App-DogSitterAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		BABB7BA0A902E41E8E610AF9 /* libPods-DogSitterAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DogSitterAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAE337E7F797CD8FEE909A23 /* Pods_App_DogSitterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_DogSitterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4710DF0B6D6B84B76DE040B /* libPods-App-DogSitterAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App-DogSitterAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEDB1755409A628A561FC959 /* Pods-App-NotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-NotificationService.release.xcconfig"; path = "Target Support Files/Pods-App-NotificationService/Pods-App-NotificationService.release.xcconfig"; sourceTree = "<group>"; };
+		B2179ACC33E610600C6BC83F /* Pods-DogSitterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp.debug.xcconfig"; path = "Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D9183F4BD349D00CA702ECD7 /* Pods-DogSitterAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterAppTests.release.xcconfig"; path = "Target Support Files/Pods-DogSitterAppTests/Pods-DogSitterAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		FDDF4267ADCE12133FB41776 /* Pods-DogSitterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSitterApp.release.xcconfig"; path = "Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +251,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2489B0A7D14354A1CFB986EE /* Pods_App_DogSitterApp.framework in Frameworks */,
+				99F6DE462B391AAE00B48E50 /* FirebaseFacebookAuthUI in Frameworks */,
+				99F6DE442B391AAE00B48E50 /* FirebaseEmailAuthUI in Frameworks */,
+				99F6DE422B391AAE00B48E50 /* FirebaseDatabaseUI in Frameworks */,
+				99F6DE482B391AAE00B48E50 /* FirebaseFirestoreUI in Frameworks */,
+				99F6DE4E2B391AAE00B48E50 /* FirebasePhoneAuthUI in Frameworks */,
+				99ACE2AF2B391239005FD4D6 /* FirebaseAnalyticsSwift in Frameworks */,
+				99F6DE4A2B391AAE00B48E50 /* FirebaseGoogleAuthUI in Frameworks */,
+				99ACE2AD2B391239005FD4D6 /* FirebaseAnalytics in Frameworks */,
+				99ACE2B72B391239005FD4D6 /* FirebaseMessaging in Frameworks */,
+				487EE9218D0F1DF4D5C1D8F5 /* Pods_DogSitterApp.framework in Frameworks */,
+				99ACE2B52B391239005FD4D6 /* FirebaseFunctions in Frameworks */,
+				99ACE2B92B391239005FD4D6 /* FirebaseStorage in Frameworks */,
+				99F6DE3E2B391AAE00B48E50 /* FirebaseAnonymousAuthUI in Frameworks */,
+				99ACE2B32B391239005FD4D6 /* FirebaseFirestore in Frameworks */,
+				99ACE2B12B391239005FD4D6 /* FirebaseAuth in Frameworks */,
+				99F6DE402B391AAE00B48E50 /* FirebaseAuthUI in Frameworks */,
+				99F6DE4C2B391AAE00B48E50 /* FirebaseOAuthUI in Frameworks */,
+				99F6DE502B391AAE00B48E50 /* FirebaseStorageUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +276,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6608DC1728575B2BC735E299 /* libPods-DogSitterAppTests.a in Frameworks */,
+				9B10F3E084F061D3FC3C7535 /* libPods-DogSitterAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13A61F7F3B1447118B7DFFD9 /* libPods-App-DogSitterAppUITests.a in Frameworks */,
+				787F3AC77980CFB5F41B5701 /* libPods-DogSitterAppUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,36 +292,78 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6D0589E23D48B28586849F0 /* Pods_App_NotificationService.framework in Frameworks */,
+				99F6DE3B2B39145800B48E50 /* FirebaseMessaging in Frameworks */,
+				E6B7A5BD4FC650A3EE70E2CC /* Pods_NotificationService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30473EF6D04F7622D81138DD /* Frameworks */ = {
+		3CF396127D0D6779759F4275 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				275973B5C4AA1FCA570DA05D /* Pods_DogSitterApp_DogSitterAppNotificationServiceExtension.framework */,
-				CAE337E7F797CD8FEE909A23 /* Pods_App_DogSitterApp.framework */,
-				D4710DF0B6D6B84B76DE040B /* libPods-App-DogSitterAppUITests.a */,
-				2BDC5C283058DFD87E3F9B42 /* Pods_App_NotificationService.framework */,
-				BABB7BA0A902E41E8E610AF9 /* libPods-DogSitterAppTests.a */,
+				0940451C7057BB79198E465B /* Pods_DogSitterApp.framework */,
+				69C3154535A88A66B2552B5F /* libPods-DogSitterAppTests.a */,
+				8213243CEB9B283E86F65FA4 /* libPods-DogSitterAppUITests.a */,
+				6666F6E445BF9482BFB2FCD7 /* Pods_NotificationService.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99027762250C794F003FBA24 /* TabBarViews */ = {
+			isa = PBXGroup;
+			children = (
+				99D8FF9A2B3CE81B00C29B79 /* ReserveDatesView */,
+				99EDB2BD24EC7F6C009E1AEE /* HomeTabView.swift */,
+				9902776725101A06003FBA24 /* CalendarViews */,
+				99027763250C79AE003FBA24 /* LiveVideoViews */,
+				99027764250C7A1C003FBA24 /* RecordingViews */,
+				99D37394253557B000704820 /* SettingsViews */,
+			);
+			path = TabBarViews;
+			sourceTree = "<group>";
+		};
+		99027763250C79AE003FBA24 /* LiveVideoViews */ = {
+			isa = PBXGroup;
+			children = (
+				99D373972537AACA00704820 /* CustomerLiveView.swift */,
+				9921DFA6245FC6900010F478 /* DogSitterLiveView.swift */,
+				99EDB2BF24EC9B5C009E1AEE /* LiveVideoView.swift */,
+				999B834824751E3800DAF25E /* VideoPlayerSwiftUIView.swift */,
+				999B834624751B9E00DAF25E /* VideoPlayerUIView.swift */,
+			);
+			path = LiveVideoViews;
+			sourceTree = "<group>";
+		};
+		99027764250C7A1C003FBA24 /* RecordingViews */ = {
+			isa = PBXGroup;
+			children = (
+				99541B15247B1C8A00D0B701 /* RecordingListView.swift */,
+				99F637DB248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift */,
+				99F637D9248A2AFC007DEB55 /* VLCPlayerUIView.swift */,
+			);
+			path = RecordingViews;
+			sourceTree = "<group>";
+		};
+		9902776725101A06003FBA24 /* CalendarViews */ = {
+			isa = PBXGroup;
+			children = (
+				993FE33A25081A85008C1A9B /* CalendarSwiftUIView.swift */,
+				9902776825101A30003FBA24 /* DayLabel.swift */,
+				99ECA30D251942AF00E6481A /* MonthHeaderLabel.swift */,
+				99ECA30F25194D9F00E6481A /* OverallCalendarView.swift */,
+			);
+			path = CalendarViews;
 			sourceTree = "<group>";
 		};
 		991AB5E4246B3C6B004FE7FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				99F6DE512B3AAC8C00B48E50 /* OnboardingViews */,
+				996ACD0D254812DF000B48CA /* ElementalViews */,
 				99F637E1249D6237007DEB55 /* Authentication */,
-				9921DF75245D4E290010F478 /* LoginView.swift */,
-				9921DFA6245FC6900010F478 /* CameraControlView.swift */,
-				999B834624751B9E00DAF25E /* VideoPlayerUIView.swift */,
-				999B834824751E3800DAF25E /* VideoPlayerSwiftUIView.swift */,
-				99F637D9248A2AFC007DEB55 /* VLCPlayerUIView.swift */,
-				99F637DB248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift */,
-				99541B15247B1C8A00D0B701 /* RecordingListView.swift */,
+				99027762250C794F003FBA24 /* TabBarViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,7 +377,7 @@
 				99BD0C3D24B0402100E5F6BB /* NotificationService */,
 				9921DF6F245D4E290010F478 /* Products */,
 				FC6F07EA3ECFE0B41CC32D6D /* Pods */,
-				30473EF6D04F7622D81138DD /* Frameworks */,
+				3CF396127D0D6779759F4275 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,13 +401,15 @@
 				999B834124739EC100DAF25E /* Interactors */,
 				9921DF93245D4F0A0010F478 /* Models */,
 				99586C11246147C8008D93E3 /* Networking */,
-				9921DF71245D4E290010F478 /* AppDelegate.swift */,
+				99B437BC24BFF2040096662F /* Utilities */,
 				9921DF73245D4E290010F478 /* SceneDelegate.swift */,
+				9921DF71245D4E290010F478 /* AppDelegate.swift */,
 				9921DF77245D4E2B0010F478 /* Assets.xcassets */,
 				9921DF7C245D4E2B0010F478 /* LaunchScreen.storyboard */,
 				9921DF7F245D4E2B0010F478 /* Info.plist */,
 				99F25C6C24A6850300F0EF4D /* GoogleService-Info.plist */,
 				9921DF79245D4E2B0010F478 /* Preview Content */,
+				99ECA3242527CDC700E6481A /* Colors.xcassets */,
 			);
 			path = DogSitterApp;
 			sourceTree = "<group>";
@@ -293,9 +439,10 @@
 		9921DF93245D4F0A0010F478 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9921DF94245D4F160010F478 /* User.swift */,
+				9921DF94245D4F160010F478 /* UserData.swift */,
 				998039BD2478DDBF001B69B9 /* Video.swift */,
-				99F25C6A24A49B9C00F0EF4D /* UserSettings.swift */,
+				99F25C6A24A49B9C00F0EF4D /* AppState.swift */,
+				99E181F424F8D5C70023416D /* Appointment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,11 +459,15 @@
 		99586C11246147C8008D93E3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				99586C1224614808008D93E3 /* HttpService.swift */,
 				99586C14246322E9008D93E3 /* NetworkingAPI.swift */,
-				997D937B246FCFE10030144B /* JsonStructs.swift */,
+				99586C1224614808008D93E3 /* HttpService.swift */,
 				997D937D246FDCBC0030144B /* URLs.swift */,
 				99F637DF249C94A7007DEB55 /* Authentication.swift */,
+				99E181F62502F6550023416D /* FirestoreManager.swift */,
+				997D937B246FCFE10030144B /* JsonStructs.swift */,
+				99ECA313251C89B500E6481A /* FirestoreAPI.swift */,
+				996ACD0925467BBC000B48CA /* ImageLoader.swift */,
+				996B22452578D093006AE590 /* CloudFunctionsAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -324,11 +475,28 @@
 		99586C182464A908008D93E3 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				991AB5DE246A5A7C004FE7FA /* CameraControlViewModel.swift */,
-				99586C192464A92E008D93E3 /* LoginViewModel.swift */,
+				99027760250AB43F003FBA24 /* CalendarViewModel.swift */,
+				99D871A9253963A30008B5FF /* CustomerLiveViewModel.swift */,
+				991AB5DE246A5A7C004FE7FA /* DogSitterLiveViewModel.swift */,
 				998039B92478894A001B69B9 /* RecordingListViewModel.swift */,
+				99ECA3172521A42400E6481A /* OnboardingViewModel.swift */,
+				99ECA326252D22D300E6481A /* SelectUserTypeViewModel.swift */,
+				99711849256D873000EAECE7 /* ViewModelFactory.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		996ACD0D254812DF000B48CA /* ElementalViews */ = {
+			isa = PBXGroup;
+			children = (
+				996ACD052546367B000B48CA /* ActivityIndicatorSwiftUIView.swift */,
+				996ACD0B25467CA2000B48CA /* AsyncImage.swift */,
+				996ACD0E254EB6D0000B48CA /* HiddenText.swift */,
+				996ACD10254EBCE3000B48CA /* SystemImage.swift */,
+				997117B8255A1A8700EAECE7 /* VideoPlayerViewController.swift */,
+				997117BE255A668600EAECE7 /* FullscreenVideoSwiftUIView.swift */,
+			);
+			path = ElementalViews;
 			sourceTree = "<group>";
 		};
 		999B833E2473994E00DAF25E /* Interactors */ = {
@@ -349,6 +517,20 @@
 			path = Interactors;
 			sourceTree = "<group>";
 		};
+		99B437BC24BFF2040096662F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				99027765250DDE3D003FBA24 /* DateExtensions.swift */,
+				99B437BD24BFF22A0096662F /* KeyboardAdaptive.swift */,
+				99ECA311251B2DD800E6481A /* UIViewExtensions.swift */,
+				99ECA315251DDED100E6481A /* InputValidation.swift */,
+				99ECA3222527C54F00E6481A /* ColorManager.swift */,
+				997B87192530FD76003466A8 /* Strings.swift */,
+				997118342564B87B00EAECE7 /* Calculations.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		99BD0C3D24B0402100E5F6BB /* NotificationService */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +538,22 @@
 				99BD0C4024B0402100E5F6BB /* Info.plist */,
 			);
 			path = NotificationService;
+			sourceTree = "<group>";
+		};
+		99D37394253557B000704820 /* SettingsViews */ = {
+			isa = PBXGroup;
+			children = (
+				99D37395253557E500704820 /* SettingsView.swift */,
+			);
+			path = SettingsViews;
+			sourceTree = "<group>";
+		};
+		99D8FF9A2B3CE81B00C29B79 /* ReserveDatesView */ = {
+			isa = PBXGroup;
+			children = (
+				99D8FF9B2B3CE87500C29B79 /* ReserveDatesView.swift */,
+			);
+			path = ReserveDatesView;
 			sourceTree = "<group>";
 		};
 		99EF06CB246E649500B01BB9 /* Networking */ = {
@@ -409,23 +607,30 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		99F6DE512B3AAC8C00B48E50 /* OnboardingViews */ = {
+			isa = PBXGroup;
+			children = (
+				99BD0C4724B1C96E00E5F6BB /* RootView.swift */,
+				99BD0C4924BE774D00E5F6BB /* OnboardingView.swift */,
+				99BD0C4B24BEB91000E5F6BB /* LabelTextField.swift */,
+				99ECA3192522BCC800E6481A /* UserCardView.swift */,
+				99ECA31D25232A6100E6481A /* CustomCheckmarkView.swift */,
+				99E4B46A2B3AAE9E00041DDE /* SelectUserTypeView.swift */,
+			);
+			path = OnboardingViews;
+			sourceTree = "<group>";
+		};
 		FC6F07EA3ECFE0B41CC32D6D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				28C961E21DD914C43E17F884 /* Pods-DogSitterApp.debug.xcconfig */,
-				837E64252596F0626FB3FA28 /* Pods-DogSitterApp.release.xcconfig */,
-				5950B95783A774559442A83F /* Pods-DogSitterApp-DogSitterAppUITests.debug.xcconfig */,
-				98ECB74CEC3E07F9C749ECDD /* Pods-DogSitterApp-DogSitterAppUITests.release.xcconfig */,
-				340AD0CB7CE5E303B5A9575E /* Pods-DogSitterAppTests.debug.xcconfig */,
-				6C61ED70E4BC3BA822463BE9 /* Pods-DogSitterAppTests.release.xcconfig */,
-				00508CDC2BF69F8CEEEE91FC /* Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.debug.xcconfig */,
-				0AF5E7F57A23861F26412F4B /* Pods-DogSitterApp-DogSitterAppNotificationServiceExtension.release.xcconfig */,
-				466AF98F5800576E1B8DB1ED /* Pods-App-DogSitterApp.debug.xcconfig */,
-				1B3327DFE1491AD141557CD3 /* Pods-App-DogSitterApp.release.xcconfig */,
-				15A836300DE6420D47D38163 /* Pods-App-DogSitterAppUITests.debug.xcconfig */,
-				A35366BB232FA2DC9583354C /* Pods-App-DogSitterAppUITests.release.xcconfig */,
-				51676583E1F35F2DD39E76B9 /* Pods-App-NotificationService.debug.xcconfig */,
-				EEDB1755409A628A561FC959 /* Pods-App-NotificationService.release.xcconfig */,
+				B2179ACC33E610600C6BC83F /* Pods-DogSitterApp.debug.xcconfig */,
+				FDDF4267ADCE12133FB41776 /* Pods-DogSitterApp.release.xcconfig */,
+				7AB84FAFEBD3955B7081ED73 /* Pods-DogSitterAppTests.debug.xcconfig */,
+				D9183F4BD349D00CA702ECD7 /* Pods-DogSitterAppTests.release.xcconfig */,
+				78C54D4A29F38DA077FBD938 /* Pods-DogSitterAppUITests.debug.xcconfig */,
+				44D5339152721C595C4AB72C /* Pods-DogSitterAppUITests.release.xcconfig */,
+				2E5756D7A6EB0FF9D591084A /* Pods-NotificationService.debug.xcconfig */,
+				4191A273BB2DBB86F38A7D3D /* Pods-NotificationService.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -437,13 +642,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9921DF82245D4E2B0010F478 /* Build configuration list for PBXNativeTarget "DogSitterApp" */;
 			buildPhases = (
-				14A1EF4509BD584ABA4CAFEE /* [CP] Check Pods Manifest.lock */,
+				FEE0D0E194AFEFA707EA66FE /* [CP] Check Pods Manifest.lock */,
 				9921DF6A245D4E290010F478 /* Sources */,
 				9921DF6B245D4E290010F478 /* Frameworks */,
 				9921DF6C245D4E290010F478 /* Resources */,
 				99BD0C3424AFF14F00E5F6BB /* Embed App Extensions */,
-				3FC15F7AAA21DEF4007214CE /* [CP] Embed Pods Frameworks */,
-				C9423FDD6FDC343724E6E204 /* [CP] Copy Pods Resources */,
+				630442BE5CDF27B68C202E6D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -451,6 +655,25 @@
 				99BD0C4224B0402100E5F6BB /* PBXTargetDependency */,
 			);
 			name = DogSitterApp;
+			packageProductDependencies = (
+				99ACE2AC2B391239005FD4D6 /* FirebaseAnalytics */,
+				99ACE2AE2B391239005FD4D6 /* FirebaseAnalyticsSwift */,
+				99ACE2B02B391239005FD4D6 /* FirebaseAuth */,
+				99ACE2B22B391239005FD4D6 /* FirebaseFirestore */,
+				99ACE2B42B391239005FD4D6 /* FirebaseFunctions */,
+				99ACE2B62B391239005FD4D6 /* FirebaseMessaging */,
+				99ACE2B82B391239005FD4D6 /* FirebaseStorage */,
+				99F6DE3D2B391AAE00B48E50 /* FirebaseAnonymousAuthUI */,
+				99F6DE3F2B391AAE00B48E50 /* FirebaseAuthUI */,
+				99F6DE412B391AAE00B48E50 /* FirebaseDatabaseUI */,
+				99F6DE432B391AAE00B48E50 /* FirebaseEmailAuthUI */,
+				99F6DE452B391AAE00B48E50 /* FirebaseFacebookAuthUI */,
+				99F6DE472B391AAE00B48E50 /* FirebaseFirestoreUI */,
+				99F6DE492B391AAE00B48E50 /* FirebaseGoogleAuthUI */,
+				99F6DE4B2B391AAE00B48E50 /* FirebaseOAuthUI */,
+				99F6DE4D2B391AAE00B48E50 /* FirebasePhoneAuthUI */,
+				99F6DE4F2B391AAE00B48E50 /* FirebaseStorageUI */,
+			);
 			productName = DogSitterApp;
 			productReference = 9921DF6E245D4E290010F478 /* DogSitterApp.app */;
 			productType = "com.apple.product-type.application";
@@ -459,7 +682,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9921DF90245D4E720010F478 /* Build configuration list for PBXNativeTarget "DogSitterAppTests" */;
 			buildPhases = (
-				508FAC167EB0914F9C69BFAF /* [CP] Check Pods Manifest.lock */,
+				D8141614C96E893BAF029536 /* [CP] Check Pods Manifest.lock */,
 				9921DF85245D4E720010F478 /* Sources */,
 				9921DF86245D4E720010F478 /* Frameworks */,
 				9921DF87245D4E720010F478 /* Resources */,
@@ -478,7 +701,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9921DFA5245FB8420010F478 /* Build configuration list for PBXNativeTarget "DogSitterAppUITests" */;
 			buildPhases = (
-				2FC089C8E8CF519C15871808 /* [CP] Check Pods Manifest.lock */,
+				E8E74E33FA8761EB9E559DBD /* [CP] Check Pods Manifest.lock */,
 				9921DF98245FB8420010F478 /* Sources */,
 				9921DF99245FB8420010F478 /* Frameworks */,
 				9921DF9A245FB8420010F478 /* Resources */,
@@ -497,7 +720,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99BD0C4424B0402100E5F6BB /* Build configuration list for PBXNativeTarget "NotificationService" */;
 			buildPhases = (
-				08A672AAF57C32768EE18815 /* [CP] Check Pods Manifest.lock */,
+				A811B9948C833963D5D3740A /* [CP] Check Pods Manifest.lock */,
 				99BD0C3824B0402100E5F6BB /* Sources */,
 				99BD0C3924B0402100E5F6BB /* Frameworks */,
 				99BD0C3A24B0402100E5F6BB /* Resources */,
@@ -507,6 +730,9 @@
 			dependencies = (
 			);
 			name = NotificationService;
+			packageProductDependencies = (
+				99F6DE3A2B39145800B48E50 /* FirebaseMessaging */,
+			);
 			productName = NotificationService;
 			productReference = 99BD0C3C24B0402100E5F6BB /* NotificationService.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -538,7 +764,7 @@
 				};
 			};
 			buildConfigurationList = 9921DF69245D4E290010F478 /* Build configuration list for PBXProject "DogSitterApp" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -546,6 +772,11 @@
 				Base,
 			);
 			mainGroup = 9921DF65245D4E290010F478;
+			packageReferences = (
+				9918827A2B38EE0F00F41732 /* XCRemoteSwiftPackageReference "GoogleUtilities" */,
+				99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */,
+			);
 			productRefGroup = 9921DF6F245D4E290010F478 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -563,6 +794,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99ECA3252527CDC700E6481A /* Colors.xcassets in Resources */,
 				9921DF7E245D4E2B0010F478 /* LaunchScreen.storyboard in Resources */,
 				99F25C6D24A6850300F0EF4D /* GoogleService-Info.plist in Resources */,
 				9921DF7B245D4E2B0010F478 /* Preview Assets.xcassets in Resources */,
@@ -594,90 +826,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		08A672AAF57C32768EE18815 /* [CP] Check Pods Manifest.lock */ = {
+		630442BE5CDF27B68C202E6D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-App-NotificationService-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		14A1EF4509BD584ABA4CAFEE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-App-DogSitterApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2FC089C8E8CF519C15871808 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-App-DogSitterAppUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3FC15F7AAA21DEF4007214CE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-App-DogSitterApp/Pods-App-DogSitterApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-App-DogSitterApp/Pods-App-DogSitterApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-App-DogSitterApp/Pods-App-DogSitterApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogSitterApp/Pods-DogSitterApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		508FAC167EB0914F9C69BFAF /* [CP] Check Pods Manifest.lock */ = {
+		A811B9948C833963D5D3740A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NotificationService-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8141614C96E893BAF029536 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -699,21 +887,48 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C9423FDD6FDC343724E6E204 /* [CP] Copy Pods Resources */ = {
+		E8E74E33FA8761EB9E559DBD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-App-DogSitterApp/Pods-App-DogSitterApp-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-App-DogSitterApp/Pods-App-DogSitterApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DogSitterAppUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-App-DogSitterApp/Pods-App-DogSitterApp-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEE0D0E194AFEFA707EA66FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DogSitterApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -723,28 +938,64 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D37396253557E500704820 /* SettingsView.swift in Sources */,
 				999B834924751E3800DAF25E /* VideoPlayerSwiftUIView.swift in Sources */,
+				997117B9255A1A8700EAECE7 /* VideoPlayerViewController.swift in Sources */,
 				997D937E246FDCBC0030144B /* URLs.swift in Sources */,
 				99586C15246322E9008D93E3 /* NetworkingAPI.swift in Sources */,
 				99F637DA248A2AFC007DEB55 /* VLCPlayerUIView.swift in Sources */,
-				9921DF95245D4F160010F478 /* User.swift in Sources */,
+				99BD0C4C24BEB91000E5F6BB /* LabelTextField.swift in Sources */,
+				99E4B46B2B3AAE9E00041DDE /* SelectUserTypeView.swift in Sources */,
+				99ECA314251C89B500E6481A /* FirestoreAPI.swift in Sources */,
+				996ACD0F254EB6D0000B48CA /* HiddenText.swift in Sources */,
+				9921DF95245D4F160010F478 /* UserData.swift in Sources */,
+				99ECA31A2522BCC800E6481A /* UserCardView.swift in Sources */,
 				99586C1324614808008D93E3 /* HttpService.swift in Sources */,
 				999B834324739EDD00DAF25E /* CameraControl_Interactor.swift in Sources */,
+				99ECA31025194D9F00E6481A /* OverallCalendarView.swift in Sources */,
 				999B834724751B9E00DAF25E /* VideoPlayerUIView.swift in Sources */,
+				99E181F524F8D5C70023416D /* Appointment.swift in Sources */,
+				99ECA30E251942AF00E6481A /* MonthHeaderLabel.swift in Sources */,
+				9971184A256D873000EAECE7 /* ViewModelFactory.swift in Sources */,
+				996ACD062546367B000B48CA /* ActivityIndicatorSwiftUIView.swift in Sources */,
+				9902776925101A30003FBA24 /* DayLabel.swift in Sources */,
+				99BD0C4824B1C96E00E5F6BB /* RootView.swift in Sources */,
 				9921DF72245D4E290010F478 /* AppDelegate.swift in Sources */,
+				99EDB2BE24EC7F6C009E1AEE /* HomeTabView.swift in Sources */,
+				993FE33B25081A85008C1A9B /* CalendarSwiftUIView.swift in Sources */,
 				99F637DC248A2E07007DEB55 /* VLCPlayerSwiftUIView.swift in Sources */,
-				991AB5DF246A5A7C004FE7FA /* CameraControlViewModel.swift in Sources */,
+				99ECA3182521A42400E6481A /* OnboardingViewModel.swift in Sources */,
+				991AB5DF246A5A7C004FE7FA /* DogSitterLiveViewModel.swift in Sources */,
 				9921DF74245D4E290010F478 /* SceneDelegate.swift in Sources */,
+				99D373982537AACA00704820 /* CustomerLiveView.swift in Sources */,
+				997117BF255A668600EAECE7 /* FullscreenVideoSwiftUIView.swift in Sources */,
+				99D8FF9C2B3CE87500C29B79 /* ReserveDatesView.swift in Sources */,
 				99541B16247B1C8A00D0B701 /* RecordingListView.swift in Sources */,
-				9921DFA7245FC6900010F478 /* CameraControlView.swift in Sources */,
+				99E181F72502F6550023416D /* FirestoreManager.swift in Sources */,
+				9921DFA7245FC6900010F478 /* DogSitterLiveView.swift in Sources */,
+				99ECA31E25232A6100E6481A /* CustomCheckmarkView.swift in Sources */,
+				99027766250DDE3D003FBA24 /* DateExtensions.swift in Sources */,
 				99F637E0249C94A7007DEB55 /* Authentication.swift in Sources */,
-				99F25C6B24A49B9C00F0EF4D /* UserSettings.swift in Sources */,
+				99F25C6B24A49B9C00F0EF4D /* AppState.swift in Sources */,
 				998039BE2478DDBF001B69B9 /* Video.swift in Sources */,
+				99BD0C4A24BE774E00E5F6BB /* OnboardingView.swift in Sources */,
+				996B22462578D093006AE590 /* CloudFunctionsAPI.swift in Sources */,
 				998039BA2478894A001B69B9 /* RecordingListViewModel.swift in Sources */,
+				996ACD0C25467CA2000B48CA /* AsyncImage.swift in Sources */,
+				99D871AA253963A30008B5FF /* CustomerLiveViewModel.swift in Sources */,
+				99027761250AB43F003FBA24 /* CalendarViewModel.swift in Sources */,
+				99ECA3232527C54F00E6481A /* ColorManager.swift in Sources */,
 				998039BC24788A55001B69B9 /* RecordingListInteractor.swift in Sources */,
-				9921DF76245D4E290010F478 /* LoginView.swift in Sources */,
+				997B871A2530FD76003466A8 /* Strings.swift in Sources */,
+				996ACD0A25467BBC000B48CA /* ImageLoader.swift in Sources */,
+				997118352564B87B00EAECE7 /* Calculations.swift in Sources */,
+				99ECA327252D22D300E6481A /* SelectUserTypeViewModel.swift in Sources */,
+				99EDB2C024EC9B5C009E1AEE /* LiveVideoView.swift in Sources */,
+				99B437BE24BFF22A0096662F /* KeyboardAdaptive.swift in Sources */,
+				996ACD11254EBCE3000B48CA /* SystemImage.swift in Sources */,
 				997D937C246FCFE10030144B /* JsonStructs.swift in Sources */,
-				99586C1A2464A92E008D93E3 /* LoginViewModel.swift in Sources */,
+				99ECA316251DDED100E6481A /* InputValidation.swift in Sources */,
+				99ECA312251B2DD800E6481A /* UIViewExtensions.swift in Sources */,
 				99F637E3249DDC35007DEB55 /* FirebaseAuthController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -818,7 +1069,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -851,6 +1102,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -865,7 +1117,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -879,7 +1131,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -912,6 +1164,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -920,9 +1173,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -932,12 +1186,13 @@
 		};
 		9921DF83245D4E2B0010F478 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 466AF98F5800576E1B8DB1ED /* Pods-App-DogSitterApp.debug.xcconfig */;
+			baseConfigurationReference = B2179ACC33E610600C6BC83F /* Pods-DogSitterApp.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DogSitterApp/DogSitterApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DogSitterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = XBX5KWCG2W;
@@ -949,21 +1204,24 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.playbowdogs.DogSitterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		9921DF84245D4E2B0010F478 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B3327DFE1491AD141557CD3 /* Pods-App-DogSitterApp.release.xcconfig */;
+			baseConfigurationReference = FDDF4267ADCE12133FB41776 /* Pods-DogSitterApp.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DogSitterApp/DogSitterApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DogSitterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = XBX5KWCG2W;
@@ -975,16 +1233,19 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.6;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.playbowdogs.DogSitterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		9921DF91245D4E720010F478 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 340AD0CB7CE5E303B5A9575E /* Pods-DogSitterAppTests.debug.xcconfig */;
+			baseConfigurationReference = 7AB84FAFEBD3955B7081ED73 /* Pods-DogSitterAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1005,7 +1266,7 @@
 		};
 		9921DF92245D4E720010F478 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C61ED70E4BC3BA822463BE9 /* Pods-DogSitterAppTests.release.xcconfig */;
+			baseConfigurationReference = D9183F4BD349D00CA702ECD7 /* Pods-DogSitterAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1026,7 +1287,7 @@
 		};
 		9921DFA3245FB8420010F478 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15A836300DE6420D47D38163 /* Pods-App-DogSitterAppUITests.debug.xcconfig */;
+			baseConfigurationReference = 78C54D4A29F38DA077FBD938 /* Pods-DogSitterAppUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBX5KWCG2W;
@@ -1046,7 +1307,7 @@
 		};
 		9921DFA4245FB8420010F478 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A35366BB232FA2DC9583354C /* Pods-App-DogSitterAppUITests.release.xcconfig */;
+			baseConfigurationReference = 44D5339152721C595C4AB72C /* Pods-DogSitterAppUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBX5KWCG2W;
@@ -1066,17 +1327,18 @@
 		};
 		99BD0C4524B0402100E5F6BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51676583E1F35F2DD39E76B9 /* Pods-App-NotificationService.debug.xcconfig */;
+			baseConfigurationReference = 2E5756D7A6EB0FF9D591084A /* Pods-NotificationService.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBX5KWCG2W;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.playbowdogs.DogSitterApp.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1087,18 +1349,19 @@
 		};
 		99BD0C4624B0402100E5F6BB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEDB1755409A628A561FC959 /* Pods-App-NotificationService.release.xcconfig */;
+			baseConfigurationReference = 4191A273BB2DBB86F38A7D3D /* Pods-NotificationService.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = XBX5KWCG2W;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.playbowdogs.DogSitterApp.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1156,6 +1419,126 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9918827A2B38EE0F00F41732 /* XCRemoteSwiftPackageReference "GoogleUtilities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleUtilities.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.1;
+			};
+		};
+		99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.1;
+			};
+		};
+		99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/FirebaseUI-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99ACE2AC2B391239005FD4D6 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		99ACE2AE2B391239005FD4D6 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		99ACE2B02B391239005FD4D6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		99ACE2B22B391239005FD4D6 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		99ACE2B42B391239005FD4D6 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		99ACE2B62B391239005FD4D6 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		99ACE2B82B391239005FD4D6 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		99F6DE3A2B39145800B48E50 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99ACE2AB2B391239005FD4D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		99F6DE3D2B391AAE00B48E50 /* FirebaseAnonymousAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseAnonymousAuthUI;
+		};
+		99F6DE3F2B391AAE00B48E50 /* FirebaseAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseAuthUI;
+		};
+		99F6DE412B391AAE00B48E50 /* FirebaseDatabaseUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseDatabaseUI;
+		};
+		99F6DE432B391AAE00B48E50 /* FirebaseEmailAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseEmailAuthUI;
+		};
+		99F6DE452B391AAE00B48E50 /* FirebaseFacebookAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseFacebookAuthUI;
+		};
+		99F6DE472B391AAE00B48E50 /* FirebaseFirestoreUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseFirestoreUI;
+		};
+		99F6DE492B391AAE00B48E50 /* FirebaseGoogleAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseGoogleAuthUI;
+		};
+		99F6DE4B2B391AAE00B48E50 /* FirebaseOAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseOAuthUI;
+		};
+		99F6DE4D2B391AAE00B48E50 /* FirebasePhoneAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebasePhoneAuthUI;
+		};
+		99F6DE4F2B391AAE00B48E50 /* FirebaseStorageUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F6DE3C2B391AAE00B48E50 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseStorageUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9921DF66245D4E290010F478 /* Project object */;
 }
